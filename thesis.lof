@@ -26,10 +26,15 @@
 \contentsline {figure}{\numberline {4--11}{\ignorespaces 不同系统在四个说话人对上的相似度对比图}}{48}{figure.caption.31}
 \addvspace {10.0pt}
 \contentsline {figure}{\numberline {5--1}{\ignorespaces 跨语种语音转换和标准语音转换对比图}}{50}{figure.caption.32}
+\contentsline {figure}{\numberline {5--2}{\ignorespaces 基于DNN的说话人验证示意图\cite {variani2014deep}}}{53}{figure.caption.33}
+\contentsline {figure}{\numberline {5--3}{\ignorespaces 引入d-vector的语音转换示意图}}{54}{figure.caption.34}
+\contentsline {figure}{\numberline {5--4}{\ignorespaces 基于d-vector提取器的CycleGAN模型示意图}}{55}{figure.caption.35}
+\contentsline {figure}{\numberline {5--5}{\ignorespaces 说话人识别模型网络结构图}}{56}{figure.caption.36}
+\contentsline {figure}{\numberline {5--6}{\ignorespaces 语音转换数据集上d-vector分布图\relax }}{59}{figure.caption.37}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {--2}{\ignorespaces 绘制流程图效果\relax }}{57}{figure.caption.36}
+\contentsline {figure}{\numberline {--7}{\ignorespaces 绘制流程图效果\relax }}{65}{figure.caption.41}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}

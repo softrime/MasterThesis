@@ -233,7 +233,7 @@ CycleGAN网络包含四个模型，两个生成器($G_{X\rightarrow Y}$，$G_{Y\
     L_{adv}(G_{X\rightarrow Y},D_Y) & =\mathbb{E}_{y\sim P_{Data}(y)}\left[log D_Y(y)\right] \\
     & + \mathbb{E}_{x\sim P_{Data}(x)}\left[log(1-D_Y(G_{X\rightarrow Y}(x)))\right] \\
     L_{adv}(G_{Y\rightarrow X},D_X) & =\mathbb{E}_{x\sim P_{Data}(x)}\left[log D_X(x)\right] \\
-    & + \mathbb{E}_{y\sim P_{Data}(y)}\left[log(1-D_X(G_{Y\rightarrow X}(y)))\right] \\
+    & + \mathbb{E}_{y\sim P_{Data}(y)}\left[log(1-D_X(G_{Y\rightarrow X}(y)))\right] 
 \end{align}
 
 

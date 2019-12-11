@@ -1,19 +1,19 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
 [0] Config.pm:305> INFO - Logfile is 'thesis.blg'
-[23] biber:313> INFO - === 一 12月  9, 2019, 19:39:08
-[45] Biber.pm:371> INFO - Reading 'thesis.bcf'
-[131] Biber.pm:857> INFO - Found 81 citekeys in bib section 0
-[144] Biber.pm:3981> INFO - Processing section 0
-[152] Biber.pm:4154> INFO - Looking for bibtex format file 'bib/thesis.bib' for section 0
-[156] bibtex.pm:1468> INFO - LaTeX decoding ...
-[234] bibtex.pm:1294> INFO - Found BibTeX data source 'bib/thesis.bib'
-[238] Utils.pm:169> WARN - Duplicate entry key: 'desai2010spectral' in file 'bib/thesis.bib', skipping ...
-[239] Utils.pm:169> WARN - Duplicate entry key: 'hsu2017voice' in file 'bib/thesis.bib', skipping ...
-[241] Utils.pm:169> WARN - Duplicate entry key: 'kaneko2019stargan' in file 'bib/thesis.bib', skipping ...
-[1132] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1132] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1132] Biber.pm:3809> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[1132] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[1189] bbl.pm:617> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[1228] bbl.pm:720> INFO - Output to thesis.bbl
-[1229] Biber.pm:110> INFO - WARNINGS: 3
+[24] biber:313> INFO - === 三 12月 11, 2019, 20:45:59
+[44] Biber.pm:371> INFO - Reading 'thesis.bcf'
+[125] Biber.pm:857> INFO - Found 87 citekeys in bib section 0
+[137] Biber.pm:3981> INFO - Processing section 0
+[146] Biber.pm:4154> INFO - Looking for bibtex format file 'bib/thesis.bib' for section 0
+[150] bibtex.pm:1468> INFO - LaTeX decoding ...
+[228] bibtex.pm:1294> INFO - Found BibTeX data source 'bib/thesis.bib'
+[231] Utils.pm:169> WARN - Duplicate entry key: 'desai2010spectral' in file 'bib/thesis.bib', skipping ...
+[233] Utils.pm:169> WARN - Duplicate entry key: 'hsu2017voice' in file 'bib/thesis.bib', skipping ...
+[235] Utils.pm:169> WARN - Duplicate entry key: 'kaneko2019stargan' in file 'bib/thesis.bib', skipping ...
+[1151] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1152] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1152] Biber.pm:3809> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[1152] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[1210] bbl.pm:617> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[1249] bbl.pm:720> INFO - Output to thesis.bbl
+[1250] Biber.pm:110> INFO - WARNINGS: 3

@@ -68,16 +68,158 @@
     跨语种语音转换任务上的难度。
 \end{itemize}
 
-
 \section{说话人识别}
 \subsection{说话人识别概述}
+说话人识别，也称声纹识别，同指纹识别，人脸识别相同，是一种新兴的生物特征识别技术。该技术从连续的语音信号中提取说话人相关的离散特征，
+将说话人特征与数据库中的特征进行对比，得到匹配的说话人身份，从而实现对说话人身份的识别。说话人识别技术与语音识别技术都是输入语音信号
+的分类任务。但不同的是，语音识别更专注于语音的说话内容，并尽量忽视掉说话人信息，而说话人识别则更注重语音的说话人是谁，而相对较少
+关注语义信息。对于不同的说话人，其声道长度，声带基频，口腔及发音习惯等都有较大的区别，因而可以根据语音来判断说话人的身份，由于不同
+发音人的语速，节奏也有区别，因此韵律信息也会被考虑。说话人识别通用框架主要包括两个部分，注册以及测试。注册是指用需要识别的说话人语音训练
+识别模型，测试则是用训练好的模型对新来的语音进行识别。
+
+根据实际应用场景的不同，说话人识别可以分为两类：说话人确认(Speaker Verification)和说话人辨认(Speaker Identification)。
+其中说话人确认是针对某个特定说话人的识别，对于输入的语音，说话人确认模型输出是/否，代表该语音是否是该说话人
+所说，属于二分类问题。说话人辨认则是对于输入的语音，在给定的说话人集合中，找出最符合的一个说话人，输出该语音是哪个说话人所说，
+是多分类问题。说话人识别和说话人辨认主要在训练数据和输出层面有所区别，相比而言，说话人辨认在候选集合较大时，难度较高。
+根据注册和测试时语音文本是否一致，可以将说话人识别分为文本相关(Text-dependent)的识别和文本无关(Text-independent)的说话人识别。
+文本相关的说话人识别要求测试时提供的语音文本内容与训练时相同，模型在文本相同的先验下判断说话人身份，往往可以达到不错的性能。而文本无关的说话人识别则对
+测试时的文本内容没有限制，使用环境也相对更自由，但建模难度也往往更大。说话人识别的应用非常广泛，包括声纹加密，语音检索，说话人核对，
+和司法鉴定等。
+
+在2012年以前，说话人识别的研究还主要以基于统计的机器学习方法为主，在2012年后以深度学习为基础的方法不断提出，如bottleneck feature、
+d-vector、x-vector和j-vector等，一些最新的思想也被加入训练过程中，如基于注意力机制和learning to rank的算法等。
+可以这些算法分为三类：基于i-vector的算法，基于DNN的算法和基于注意力机制和learning to rank等的改良算法。
+其中基于DNN的算法中，早期用DNN以替代GMM计算后验概率，2014年Google提出的d-vector为标志\cite{variani2014deep}，后续提出了一系列基于DNN的方法如
+x-vector，j-vector等\cite{snyder2016deep,chen2015multi,shi2017double}。本文将采用基于d-vector的说话人识别技术，
+将其应用到跨语种语音转换中。
+
 \subsection{d-vector说话人特征}
 
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width=12cm,trim=0 10 0 0,clip]{figure/5_dvector.png}
+    \bicaption[基于DNN的说话人验证示意图\cite{variani2014deep}]
+    {基于DNN的说话人验证示意图\cite{variani2014deep}}
+    {Schematic diagram of the DNN model for speaker verification}
+    \label{fig:dvector}
+\end{figure}
+
+基于d-vector的说话人特征提取模型如图~\ref{fig:dvector}如图所示。该方法和核心在于使用DNN网络作为一个说话人
+特征提取器。在该目标下，首先在帧级别训练一个有监督的DNN模型。模型的输入是动态声学特征，即当前帧和前后若干帧的
+拼接，目的是希望模型在判断时同时考虑一定范围内的上下文信息。模型的输出是一个向量，向量的长度取决于说话人的个数$N$。
+训练时目标标签则是长度为$N$的one-hot向量，即除了输入特征对应的说话人序号在向量中的位置为1，其他值皆为0。
+
+当DNN说话人识别模型训练完成后，即将DNN模型最后一个隐层的激励函数输出作为一个新的说话人表示(d-vector)。对于一句新的语音，
+DNN对其中的每一帧都可以得到一个隐层向量，将所有帧的隐层向量累积起来，得到最终的说话人表示。这里选用最后一个隐层
+的激励函数输出作为说话人表示而不是最终的$softmax$层，是因为输出层的长度是依赖于训练的说话人总数，无法根据具体
+需要改变长短，而最后一个隐层则可以做到这点；另一方面，作者在实验中也发现最后一层隐层向量相比最终输出，其在没有见过
+的说话人上有着更好的泛化性。d-vector的假设是认为训练好的DNN说话人识别模型，已经在最后一个隐层中学到了较为紧凑的说话人
+表示，当训练时的说话人数目较多时，该表示也可以用来表达没有见过的说话人。
+
+在测试阶段，给定一个特定说话人$s$的语音句集合$X_s = \left\{O_{s_{1}},O_{s_{2}},...,O_{s_{n}}\right\}$。
+其中每个句子是一个观测集合$O_{s_{i}} = \left\{O_1,o_2,...,o_m\right\}$。首先对于每个观测，通过拼接上下帧得到其
+动态特征，输入给训练好的DNN模型，获得对应的最后一层隐层向量输出，并将其归一化，作为该帧的d-vector。最终说话人$s$的表示则
+是通过将所有的d-vector进行平均得到。当得到该说话人的一个新的语句时，将该句的d-vector与之前得到的说话人的最终表示计算
+余弦距离，通过一个预先设定的阈值来得到最终的识别结果。
+
 \section{引入说话人特征的跨语种语音转换}
-\subsection{语种无关的d-vector提取器训练}
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width=12cm,trim=0 50 250 0,clip]{figure/5_proposedarch.pdf}
+    \bicaption[引入d-vector的语音转换示意图]
+    {引入d-vector的语音转换示意图}
+    {Schematic diagram of the d-vector based Voice Conversion}
+    \label{fig:5proposedarch}
+\end{figure}
+
+如图~\ref{fig:5proposedarch}所示，引入d-vector的跨语种语音转换方法分为三个阶段。在训练阶段一，一个语种无关的说话人识别模型在
+专门用于说话人识别的数据集上进行训练，由于说话人识别模型将接入转换模型训练，为了与转换模型保持一致，
+这里使用80维的梅尔频谱，并将对应的标签改为说话人的one-hot向量；在训练阶段二，将训练好的说话人识别模型去除输出层后，
+作为说话人特征提取器加入转换模型中，在跨语种的语音转换数据集上进行特征提取和训练；测试阶段同通常的语音转换相同，先对测试的原始
+语音提取特征，并传递给训练好的转换模型，得到模型输出的转换特征后使用Griffin Lim算法生成声音。
+下文将详细介绍本文使用的语种无关的d-vector提取器和其与CycleGAN转换模型的结合。
+
+
+
 \subsection{d-vector提取器和CycleGAN的结合}
 
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width=10cm,trim=0 220 370 0,clip]{figure/5_dvectorcyclegan.pdf}
+    \bicaption[基于d-vector提取器的CycleGAN模型示意图]
+    {基于d-vector提取器的CycleGAN模型示意图}
+    {Schematic diagram of the d-vector extractor based CycleGAN}
+    \label{fig:dvectorcyclegan}
+\end{figure}
+
+如前文所述，跨语种的一大难点是差异较大的声学特征与CycleGAN训练机制的矛盾，其中主要矛盾是在CycleGAN模型
+的训练过程中，判别器的正例和负例不仅在说话人信息上具有差异，由于语种的不同，在语义信息上也有着巨大的差异，
+因此当语义信息的差异大于说话人信息的差异时，模型就会由说话人区分器变为语种区分器，极大降低了模型性能。
+本章因此提出的引入说话人信息的语音转换方法，转换模型结构如图~\ref{fig:dvectorcyclegan}所示，其中$SE$
+代表d-vector提取器，由预先训练好的语种无关的说话人分类器去掉输出层得到，$\hat{y}_{se}$是指由d-vector
+提取器从转换特征和真实特征提取出的d-vector向量。可以看出，其与标准CycleGAN的最大不同是在判别器之前加入了
+一个前置网络。该前置网络可以将声学特征向量中的说话人信息提取出来，进而在一定程度上忽略其中的语义信息。提取出来的
+说话人表示再传递给对应的判别器，此时判别器只需要从说话人表示中判定真假，而可以在较大程度上减少语种信息对判别器的
+影响。在整个模型的训练过程中，d-vector提取器只需要预先训练，之后就将参数固定，不再更新参数，只需要前向传播和
+反向计算梯度，将判别器的梯度传递给生成器即可。此时对抗损失变为
+
+\begin{align}
+    L_{adv}(G_{X\rightarrow Y},D_Y) & =\mathbb{E}_{y\sim P_{Data}(y)}\left[log D_Y(SE(y))\right] \\
+    & + \mathbb{E}_{x\sim P_{Data}(x)}\left[log(1-D_Y(SE(G_{X\rightarrow Y}(x))))\right] \\
+    L_{adv}(G_{Y\rightarrow X},D_X) & =\mathbb{E}_{x\sim P_{Data}(x)}\left[log D_X(SE(x))\right] \\
+    & + \mathbb{E}_{y\sim P_{Data}(y)}\left[log(1-D_X(SE(G_{Y\rightarrow X}(y))))\right]
+\end{align}
+
+$SE$在其中可以看成一个可以前向和反向传播的过滤模型，该模型输入声学特征，将其中的说话人之外的信息过滤掉，只留下
+其中的说话人信息。这样判别器就可以在跨语种的数据集上实现类似同语种转换的效果。
+
+
+
+\subsection{语种无关的d-vector提取器训练}
+
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width=12cm,trim=0 79 380 0,clip]{figure/5_d.pdf}
+    \bicaption[说话人识别模型网络结构图]
+    {说话人识别模型网络结构图}
+    {Architecture of the speaker verification networks}
+    \label{fig:5d}
+\end{figure}
+
+d-vector提取器作为判别器的前置网络，其功能从输入的声学特征序列中提取说话人表示，并尽可能地过滤掉特征中的语义语种信息。
+对于训练一个标准的d-vector提取器来说，通常首先需要较多说话人的语料数据，每个说话人包含几句到几十句不等，目前常用的
+开源数据中包括英文数据集voxceleb\cite{nagrani2017voxceleb}以及中文数据集CN-celeb\cite{fan2019cn}。不同于
+通常的说话人识别任务，为了能够对原始语言的真实原始特征和目标语言的转换原始特征进行说话人信息上的判别，提取出的说话人表示
+需要在中文和英文上尽可能一致，但是通常的做法并不能保证这一点。例如，使用英文数据集训练的d-vector提取器，如果测试时使用
+数据集中一个说话人的中文语音，那么由于d-vector只见过英文，则提取出的说话人表示和这个说话人英文语音的表示很可能有较大差别。
+即使d-vector在训练时见过两种语言，也不能认为这样训练出来的提取器不会考虑语种信息，这就陷入了同CycleGAN一样的问题。
+解决该问题的方法有两种，一种是从数据角度入手，如果能够收集每个说话人都是双语或多语种说话人，可以收集到他们说不同的语种的语音
+并且这样的说话人数据足够多的话，说话人识别模型则会将同一说话人的不同语种映射到同一个标签上，从而实现对语种的过滤。但这种方法通常
+不可行，因为双语说话人的数据获取难度很大，更不用说很多个说话人了。因此本章提出另一种方法，即从对抗学习的角度来解决这个问题。
+
+本章提出一种基于对抗学习的说话人识别网络结构。如图\ref{fig:5d}所示，该网络由三个部分组成，d-vector提取模型$V$，
+识别模型$C$和判别模型$D$构成。其中d-vector提取模型$V$负责从输入的声学特征中提取说话人表示，然后识别模型$C$从该说话人表示中
+得到对应的说话人身份，另一方面说话人表示也传递给判别模型$D$，来输出对应的语种。这里d-vector提取模型$V$和判别模型$D$是对抗训练的，
+即判别模型$D$的目标是尽可能地识别出d-vector属于哪个语种，而d-vector提取模型$V$则尽可能地生成无法判断语种的d-vector来欺骗判别模型$D$。
+损失函数表示如下
+
+
+\begin{align}
+    L_{adv}(D) & =\mathbb{E}_{x\sim P_{Data}(x)}\left[log D(V(x))\right] \\
+               & +\mathbb{E}_{y\sim P_{Data}(y)}\left[1-log D(V(x))\right]\\
+    L_{adv}(V) & =\mathbb{E}_{x\sim P_{Data}(x)}\left[log (0.5-D(V(x)))\right] \\
+               & +\mathbb{E}_{y\sim P_{Data}(y)}\left[log (0.5-D(V(y)))\right]
+\end{align}
+
+其中$x$和$y$分别为两个语种的训练数据。这里的对抗训练可以使用两种方法，一种是如公式所示d-vector提起器目标是生成让判别器无法判断的说话人表示，
+即0.5，另一种方法则是在训练d-vector提取器时对判别器的损失传递负梯度，但这样可能会让d-vector中包含相反语种的信息，因此本章使用前一种方法来
+训练说话人识别模型。
+
 \section{实验分析}
+本节对本章提出的引入说话人特征的跨语种语音转换方法的模型效果进行分析，将加入d-vector的语音转换模型与
+标准CycleGAN进行对比，通过主客观实验验证d-vector的有效性及不同d-vector提取器结构对转换音质的影响。
 % 客观指标可以用d-vector的距离来判断
 % 引入说话人特征的有效性：
 % 主观实验-自然度，相似度
@@ -88,10 +230,64 @@
 % 4. 加入d-vector（d-vector 64, 1000人）
 % 客观实验：
 % 测试接上转换特征d-vector和目标特征的差距
+% 1.d-vector提取器在clvc上的区分度，[dv 64 100;dv 64 500;dv 64 1000;]
 % cycle-consistency loss
 \subsection{实验配置}
-\subsection{引入说话人特征的有效性检验}
-\subsection{说话人分类模型的比较}
+本章实验所使用的数据集分为两种，在训练说话人识别模型时，本章使用了中文和英文的开源数据集CN-celeb和voxceleb。其中
+voxceleb是一个视听数据集，包含1251个名人的超过100,000句语音，这些语音多是从上传到Youtube的采访视频中获取的。
+CN-celeb是由清华大学发布的中文说话人识别开源数据集，该数据集包含1000个名人的超过130,000句语音。在训练转换模型时，
+本章所使用的数据集包括两名异性的中文说话人和一名女性的英文说话人，音频均为录制于标准环境的标准中英口语。且训练集和测试集分别为
+2000句和20句，每句话长度在10s以内。语音转换任务可分为同性别和跨性别，因此本章将英文说话人选
+为原始说话人，将中文说话人选为目标说话人，分别训练女转女的同性别转换模型和女转男的跨性别转换模型。特征提取配置参考上一章。
 
+由于跨语种的语音转换无论在训练集还是测试集都没有平行语料，不存在真实的标签，因此很难通过频谱距离这样的客观指标来判断
+特征转换的好坏。因此本章中客观实验将转换语音的d-vector与真实目标语音的d-vector进行对比来验证说话人相似度上的有效性，
+同时通过转换模型训练时的重构损失来判断转换模型训练的好坏程度。
+在主观实验中，本章将对自然度采用MOS打分的方式，对相似度采用ABX的偏好测试。
+
+\subsection{客观实验}
+
+
+
+\begin{figure}[!ht]
+    \begin{minipage}[b]{\linewidth}
+        \begin{subfigure}[b]{0.33\linewidth}
+            \centering
+            \includegraphics[width=\linewidth,trim=0 0 200 0,clip]{figure/5_dvector11.pdf}
+            \caption{100 speakers w/o adv}
+        \end{subfigure}        
+        \begin{subfigure}[b]{0.33\linewidth}
+            \centering
+            \includegraphics[width=\linewidth,trim=0 0 200 0,clip]{figure/5_dvector12.pdf}
+            \caption{500 speakers w/o adv}
+        \end{subfigure}   
+        \begin{subfigure}[b]{0.33\linewidth}
+            \centering
+            \includegraphics[width=\linewidth,trim=0 0 200 0,clip]{figure/5_dvector13.pdf}
+            \caption{1000 speakers w/o adv}
+        \end{subfigure}   
+    \end{minipage}
+    \begin{minipage}[b]{\linewidth}
+        \begin{subfigure}[b]{0.33\linewidth}
+            \centering
+            \includegraphics[width=\linewidth,trim=0 0 200 0,clip]{figure/5_dvector21.pdf}
+            \caption{100 speakers w/ adv}
+        \end{subfigure}        
+        \begin{subfigure}[b]{0.33\linewidth}
+            \centering
+            \includegraphics[width=\linewidth,trim=0 0 200 0,clip]{figure/5_dvector22.pdf}
+            \caption{500 speakers w/ adv}
+        \end{subfigure}   
+        \begin{subfigure}[b]{0.33\linewidth}
+            \centering
+            \includegraphics[width=\linewidth,trim=0 0 200 0,clip]{figure/5_dvector23.pdf}
+            \caption{1000 speakers w/ adv}
+        \end{subfigure}   
+    \end{minipage}
+
+    \bicaption{语音转换数据集上d-vector分布图}{Distribution of d-vector on VC corpus}
+\end{figure}
+
+\subsection{主观实验}
 
 \section{本章小结}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  9 DEC 2019 20:49
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  11 DEC 2019 20:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3328,13 +3328,12 @@ File: pdf/originality.pdf Graphic file (type pdf)
 
  [9
 
-] [10
-
-] (./thesis.lot)
+] [10] (./thesis.lot)
 \tf@lot=\write9
 \openout9 = `thesis.lot'.
 
  [11
+
 
 ] [12
 
@@ -3495,15 +3494,43 @@ File: figure/4_sim.png Graphic file (type bmp)
 ]
 File: figure/5_clvc.pdf Graphic file (type pdf)
 <use figure/5_clvc.pdf>
- [50])
+ [50] [51]
+File: figure/5_dvector.png Graphic file (type bmp)
+<figure/5_dvector.png>
+ [52]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51] [52] (./tex/6.tex) (./tex/app_maxwell_equations.tex [53
+ [53]
+File: figure/5_proposedarch.pdf Graphic file (type pdf)
+<use figure/5_proposedarch.pdf>
+File: figure/5_dvectorcyclegan.pdf Graphic file (type pdf)
+<use figure/5_dvectorcyclegan.pdf>
 
+Underfull \vbox (badness 4291) has occurred while \output is active []
 
-] [54
+ [54] [55]
+File: figure/5_d.pdf Graphic file (type pdf)
+<use figure/5_d.pdf>
+ [56] [57]
+File: figure/5_dvector11.pdf Graphic file (type pdf)
+<use figure/5_dvector11.pdf>
+File: figure/5_dvector12.pdf Graphic file (type pdf)
+<use figure/5_dvector12.pdf>
+File: figure/5_dvector13.pdf Graphic file (type pdf)
+<use figure/5_dvector13.pdf>
+File: figure/5_dvector21.pdf Graphic file (type pdf)
+<use figure/5_dvector21.pdf>
+File: figure/5_dvector22.pdf Graphic file (type pdf)
+<use figure/5_dvector22.pdf>
+File: figure/5_dvector23.pdf Graphic file (type pdf)
+<use figure/5_dvector23.pdf>
+) [58] [59] [60
 
-]) (./tex/app_flow_chart.tex [55] [56
+] (./tex/6.tex) (./tex/app_maxwell_equations.tex [61
+
+] [62
+
+]) (./tex/app_flow_chart.tex [63] [64
 
 ]
 *************************************************
@@ -3532,21 +3559,21 @@ LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 . - 'normal' (m/n) with NFSS spec.: <->"[FandolFang-Regular.otf]/OT"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-(./figure/flow_chart.tex)) [57] [58
+(./figure/flow_chart.tex)) [65] [66
 
 ]
 Underfull \hbox (badness 4819) in paragraph at lines 90--90
 []\TU/xits(0)/m/n/12.045 NURMINEN J, SILÉN H, POPA V, et al. Voice Conversion[G\TU/SourceCodePro(0)/m/n/12.045 /\TU/xits(0)/m/n/12.045 OL]\TU/SourceCodePro(0)/m/n/12.045 //
  []
 
-[59
+[67
 
 ]
 Underfull \hbox (badness 1383) in paragraph at lines 90--90
 []\TU/xits(0)/m/n/12.045 TODA T, CHEN L H, SAITO D, et al. The Voice Conversion Challenge
  []
 
-[60]
+[68]
 Underfull \hbox (badness 1629) in paragraph at lines 90--90
 []\TU/xits(0)/m/n/12.045 KAWAHARA H. TANDEM-STRAIGHT, a research tool for L2 study en-
  []
@@ -3561,7 +3588,7 @@ Underfull \hbox (badness 1189) in paragraph at lines 90--90
 \TU/xits(0)/m/n/12.045 linear prediction[C]\TU/SourceCodePro(0)/m/n/12.045 //\TU/xits(0)/m/n/12.045 ICASSP 2019-2019 IEEE International Conference on
  []
 
-[61] [62]
+[69] [70]
 Underfull \hbox (badness 1389) in paragraph at lines 90--90
 \TU/xits(0)/m/n/12.045 sequence-to-sequence voice conversion[J]. ArXiv preprint arXiv:1811.01609,
  []
@@ -3571,32 +3598,32 @@ Underfull \hbox (badness 2409) in paragraph at lines 90--90
 \TU/xits(0)/m/n/12.045 sequence voice conversion with attention and context preservation mecha-
  []
 
-[63] [64]
+[71] [72]
 Underfull \hbox (badness 2680) in paragraph at lines 90--90
 []\TU/xits(0)/m/n/12.045 CHEN K, CHEN B, LAI J, et al. High-quality Voice Conversion Using
  []
 
-[65] [66] (./tex/acknowledgements.tex [67] [68
+[73] [74] (./tex/acknowledgements.tex [75] [76
 
-]) (./tex/publications.tex [69
+]) (./tex/publications.tex [77
 
-] [70
+] [78
 
-]) (./tex/projects.tex [71
+]) (./tex/projects.tex [79
 
-] [72
+] [80
 
-]) (./tex/patents.tex [73
+]) (./tex/patents.tex [81
 
-] [74
+] [82
 
-]) (./tex/resume.tex [75
+]) (./tex/resume.tex [83
 
-] [76
+] [84
 
 ]) (./tex/end_english_abstract.tex) 
 AED: pageslts setting LastPage 
-[77
+[85
 
 ]
 \tf@thm=\write11
@@ -3622,12 +3649,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60723 strings out of 493007
- 1218571 string characters out of 6136718
- 1754068 words of memory out of 5000000
- 63699 multiletter control sequences out of 15000+600000
+ 60791 strings out of 493007
+ 1220505 string characters out of 6136718
+ 1755691 words of memory out of 5000000
+ 63757 multiletter control sequences out of 15000+600000
  535930 words of font info for 168 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  75i,18n,95p,10472b,6700s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (101 pages).
+Output written on thesis.pdf (109 pages).
