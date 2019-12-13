@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  11 DEC 2019 20:46
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  13 DEC 2019 13:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3322,13 +3322,13 @@ File: pdf/originality.pdf Graphic file (type pdf)
 
  [7] [8
 
-] (./thesis.lof)
+] (./thesis.lof [9
+
+])
 \tf@lof=\write8
 \openout8 = `thesis.lof'.
 
- [9
-
-] [10] (./thesis.lot)
+ [10] (./thesis.lot)
 \tf@lot=\write9
 \openout9 = `thesis.lot'.
 
@@ -3524,6 +3524,10 @@ File: figure/5_dvector22.pdf Graphic file (type pdf)
 <use figure/5_dvector22.pdf>
 File: figure/5_dvector23.pdf Graphic file (type pdf)
 <use figure/5_dvector23.pdf>
+File: figure/5_cycle1.pdf Graphic file (type pdf)
+<use figure/5_cycle1.pdf>
+File: figure/5_cycle2.pdf Graphic file (type pdf)
+<use figure/5_cycle2.pdf>
 ) [58] [59] [60
 
 ] (./tex/6.tex) (./tex/app_maxwell_equations.tex [61
@@ -3649,10 +3653,10 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60791 strings out of 493007
- 1220505 string characters out of 6136718
- 1755691 words of memory out of 5000000
- 63757 multiletter control sequences out of 15000+600000
+ 60801 strings out of 493007
+ 1220723 string characters out of 6136718
+ 1754738 words of memory out of 5000000
+ 63765 multiletter control sequences out of 15000+600000
  535930 words of font info for 168 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  75i,18n,95p,10472b,6700s stack positions out of 5000i,500n,10000p,200000b,80000s

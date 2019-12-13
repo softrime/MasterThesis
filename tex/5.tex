@@ -225,7 +225,6 @@ d-vector提取器作为判别器的前置网络，其功能从输入的声学特
 % 主观实验-自然度，相似度
 % 系统：
 % 1. baseline, 标准CycleGAN
-% 2. 加入d-vector（d-vector 512， 100人）
 % 3. 加入d-vector（d-vector 64， 100人）
 % 4. 加入d-vector（d-vector 64, 1000人）
 % 客观实验：
@@ -236,9 +235,12 @@ d-vector提取器作为判别器的前置网络，其功能从输入的声学特
 本章实验所使用的数据集分为两种，在训练说话人识别模型时，本章使用了中文和英文的开源数据集CN-celeb和voxceleb。其中
 voxceleb是一个视听数据集，包含1251个名人的超过100,000句语音，这些语音多是从上传到Youtube的采访视频中获取的。
 CN-celeb是由清华大学发布的中文说话人识别开源数据集，该数据集包含1000个名人的超过130,000句语音。在训练转换模型时，
-本章所使用的数据集包括两名异性的中文说话人和一名女性的英文说话人，音频均为录制于标准环境的标准中英口语。且训练集和测试集分别为
-2000句和20句，每句话长度在10s以内。语音转换任务可分为同性别和跨性别，因此本章将英文说话人选
+本章所使用的数据集包括一名男性的中文说话人(lcxinm)，女性的中文说话人(gpyinf)和一名女性的英文说话人(ljspeech)，
+音频均为录制于标准环境的标准中英口语。且训练集和测试集分别为2000句和20句，每句话长度在10s以内。
+语音转换任务通常分为同性别和跨性别，因此本章将英文说话人选
 为原始说话人，将中文说话人选为目标说话人，分别训练女转女的同性别转换模型和女转男的跨性别转换模型。特征提取配置参考上一章。
+
+
 
 由于跨语种的语音转换无论在训练集还是测试集都没有平行语料，不存在真实的标签，因此很难通过频谱距离这样的客观指标来判断
 特征转换的好坏。因此本章中客观实验将转换语音的d-vector与真实目标语音的d-vector进行对比来验证说话人相似度上的有效性，
@@ -247,7 +249,7 @@ CN-celeb是由清华大学发布的中文说话人识别开源数据集，该数
 
 \subsection{客观实验}
 
-
+% 1.d-vector在语音转换数据集上的分布
 
 \begin{figure}[!ht]
     \begin{minipage}[b]{\linewidth}
@@ -287,6 +289,52 @@ CN-celeb是由清华大学发布的中文说话人识别开源数据集，该数
 
     \bicaption{语音转换数据集上d-vector分布图}{Distribution of d-vector on VC corpus}
 \end{figure}
+
+% 2.d-vector的差距，使用1000句的d-vector。
+% 每一组：原始；目标；baseline；没有adv；有adv
+\begin{table}
+    \centering
+    \begin{tabular}[t]{ cccccc }
+        \toprule
+        % \hline
+        %\multirow{1}{*}{Methods} & \multicolumn{3}{|c|}{Female to male} \\
+         %\cline{2-4}
+        任务  & 原始 & 目标 & CycleGAN & DV-CycleGAN & LIDV-CycleGAN  \\
+         %\hline
+         %\hline
+        \midrule
+        %\hline
+        同性别    &     0.3164 &  0.0 & 0.0171 & 0.0688 & \textbf{0.0153}           \\
+        %\hline
+        跨性别    &    0.1533 & 0.0 & 0.1248 & \textbf{0.0506} & 0.0849  \\
+        \bottomrule
+        \end{tabular} 
+    \bicaption{d-vector误差对比}{Female to male}
+    \label{tab:f0f22}
+\end{table}
+
+% cycle-consistency loss curve
+% 同性别，跨性别，
+% baseline, dv, lidv
+% cyclea
+
+
+\begin{figure}[!ht]
+    \begin{minipage}[b]{\linewidth}
+        \begin{subfigure}[b]{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth,trim=0 0 0 0,clip]{figure/5_cycle1.pdf}
+            \caption{100 speakers w/o adv}
+        \end{subfigure}        
+        \begin{subfigure}[b]{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth,trim=0 0 0 0,clip]{figure/5_cycle2.pdf}
+            \caption{500 speakers w/o adv}
+        \end{subfigure}   
+    \end{minipage}
+    \bicaption{语音转换数据集上d-vector分布图}{Distribution of d-vector on VC corpus}
+\end{figure}
+
 
 \subsection{主观实验}
 
