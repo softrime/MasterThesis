@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  14 DEC 2019 17:41
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  14 DEC 2019 20:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3389,7 +3389,10 @@ File: figure/2_vc_basis.pdf Graphic file (type pdf)
 . - 'normal' (m/n) with NFSS spec.: <->"[FandolKai-Regular.otf]/OT"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-[9] [10]
+[9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
 LaTeX Font Info:    Font shape `TU/xits-math(2)/m/n' will be
 (Font)              scaled to size 7.0001pt on input line 56.
 LaTeX Font Info:    Font shape `TU/xits-math(2)/m/n' will be
@@ -3424,10 +3427,9 @@ File: figure/2_dtw.pdf Graphic file (type pdf)
  [16] [17] [18] [19]
 File: figure/2_mlp.pdf Graphic file (type pdf)
 <use figure/2_mlp.pdf>
- [20]
 File: figure/lstm.png Graphic file (type bmp)
 <figure/lstm.png>
- [21] [22] [23]) (./tex/3.tex [24]
+ [20] [21] [22] [23]) (./tex/3.tex [24]
 第三章
 [25
 
@@ -3469,17 +3471,20 @@ File: figure/4_dataflow.pdf Graphic file (type pdf)
  [39]
 File: figure/4_semi.pdf Graphic file (type pdf)
 <use figure/4_semi.pdf>
- [40] [41]
+ [40]
+Underfull \vbox (badness 3792) has occurred while \output is active []
+
+ [41]
 File: figure/4_networks.pdf Graphic file (type pdf)
 <use figure/4_networks.pdf>
- [42]
+ [42] [43]
+File: figure/4_msd.png Graphic file (type bmp)
+<figure/4_msd.png>
+File: figure/4_msd.png Graphic file (type bmp)
+<figure/4_msd.png>
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43]
-File: figure/4_msd.png Graphic file (type bmp)
-<figure/4_msd.png>
-File: figure/4_msd.png Graphic file (type bmp)
-<figure/4_msd.png>
  [44] [45] [46]
 File: figure/4_mos.png Graphic file (type bmp)
 <figure/4_mos.png>
@@ -3498,20 +3503,21 @@ File: figure/5_clvc.pdf Graphic file (type pdf)
 File: figure/5_dvector.png Graphic file (type bmp)
 <figure/5_dvector.png>
  [52]
+File: figure/5_proposedarch.pdf Graphic file (type pdf)
+<use figure/5_proposedarch.pdf>
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [53]
-File: figure/5_proposedarch.pdf Graphic file (type pdf)
-<use figure/5_proposedarch.pdf>
 File: figure/5_dvectorcyclegan.pdf Graphic file (type pdf)
 <use figure/5_dvectorcyclegan.pdf>
-
-Underfull \vbox (badness 4291) has occurred while \output is active []
-
- [54] [55]
+ [54]
 File: figure/5_d.pdf Graphic file (type pdf)
 <use figure/5_d.pdf>
- [56] [57] [58]
+ [55]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [56] [57]
 File: figure/5_dvector11.pdf Graphic file (type pdf)
 <use figure/5_dvector11.pdf>
 File: figure/5_dvector12.pdf Graphic file (type pdf)
@@ -3524,17 +3530,17 @@ File: figure/5_dvector22.pdf Graphic file (type pdf)
 <use figure/5_dvector22.pdf>
 File: figure/5_dvector23.pdf Graphic file (type pdf)
 <use figure/5_dvector23.pdf>
- [59]
+ [58]
 File: figure/5_cycle1.pdf Graphic file (type pdf)
 <use figure/5_cycle1.pdf>
 File: figure/5_cycle2.pdf Graphic file (type pdf)
 <use figure/5_cycle2.pdf>
- [60] [61]
+ [59] [60] [61]
 File: figure/5_mosintra.pdf Graphic file (type pdf)
 <use figure/5_mosintra.pdf>
 File: figure/5_mosinter.pdf Graphic file (type pdf)
 <use figure/5_mosinter.pdf>
- [62]) [63] [64
+) [62] [63] [64
 
 ] (./tex/6.tex) [65
 
@@ -3604,25 +3610,13 @@ Underfull \hbox (badness 2680) in paragraph at lines 90--90
 
 [73] [74] (./tex/acknowledgements.tex [75] [76
 
-]) (./tex/publications.tex [77
+]) (./tex/patents.tex [77
 
 ] [78
 
-]) (./tex/projects.tex [79
-
-] [80
-
-]) (./tex/patents.tex [81
-
-] [82
-
-]) (./tex/resume.tex [83
-
-] [84
-
 ]) (./tex/end_english_abstract.tex) 
 AED: pageslts setting LastPage 
-[85
+[79
 
 ]
 \tf@thm=\write11
@@ -3643,17 +3637,21 @@ Package pageslts Info: Total number of pages is odd.
 (./thesis.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 107.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 107.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60643 strings out of 493007
- 1217047 string characters out of 6136718
- 1754979 words of memory out of 5000000
- 63612 multiletter control sequences out of 15000+600000
- 535946 words of font info for 170 fonts, out of 8000000 for 9000
+ 60621 strings out of 493007
+ 1216027 string characters out of 6136718
+ 1756924 words of memory out of 5000000
+ 63597 multiletter control sequences out of 15000+600000
+ 535938 words of font info for 169 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  75i,18n,95p,10472b,6702s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (109 pages).
+Output written on thesis.pdf (103 pages).

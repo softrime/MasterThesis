@@ -5,7 +5,7 @@
 \contentsline {figure}{\numberline {2--2}{\ignorespaces 源滤波器模型示意图}}{12}{figure.caption.11}
 \contentsline {figure}{\numberline {2--3}{\ignorespaces STRAIGHT声码器模型框架}}{13}{figure.caption.12}
 \contentsline {figure}{\numberline {2--4}{\ignorespaces WaveNet自回归示意图}}{15}{figure.caption.13}
-\contentsline {figure}{\numberline {2--5}{\ignorespaces DTW算法序列对齐示意图}}{17}{figure.caption.14}
+\contentsline {figure}{\numberline {2--5}{\ignorespaces DTW算法序列对齐示意图}}{16}{figure.caption.14}
 \contentsline {figure}{\numberline {2--6}{\ignorespaces 多层感知机结构图}}{20}{figure.caption.15}
 \contentsline {figure}{\numberline {2--7}{\ignorespaces 长短时记忆网络结构图}}{21}{figure.caption.16}
 \addvspace {10.0pt}
@@ -19,10 +19,10 @@
 \contentsline {figure}{\numberline {4--4}{\ignorespaces 基于半优化CycleGAN的语音转换系统结构图}}{39}{figure.caption.23}
 \contentsline {figure}{\numberline {4--5}{\ignorespaces 标准CycleGAN中最小更新过程示意图}}{40}{figure.caption.24}
 \contentsline {figure}{\numberline {4--6}{\ignorespaces 标准CycleGAN和半优化CycleGAN重构损失函数的对比图}}{41}{figure.caption.25}
-\contentsline {figure}{\numberline {4--7}{\ignorespaces 半优化CycleGAN网络结构图}}{43}{figure.caption.26}
-\contentsline {figure}{\numberline {4--8}{\ignorespaces 标准CycleGAN和半优化CycleGAN在训练过程中梅尔频谱距离的对比\relax }}{45}{figure.caption.27}
+\contentsline {figure}{\numberline {4--7}{\ignorespaces 半优化CycleGAN网络结构图}}{42}{figure.caption.26}
+\contentsline {figure}{\numberline {4--8}{\ignorespaces 标准CycleGAN和半优化CycleGAN在训练过程中梅尔频谱距离的对比\relax }}{46}{figure.caption.27}
 \contentsline {figure}{\numberline {4--9}{\ignorespaces 不同方法在语音自然度上的平均主观意见分对比图}}{47}{figure.caption.29}
-\contentsline {figure}{\numberline {4--10}{\ignorespaces 不同大小训练数据集在语音自然度上的平均主观意见分对比图}}{48}{figure.caption.30}
+\contentsline {figure}{\numberline {4--10}{\ignorespaces 不同大小训练数据集在语音自然度上的平均主观意见分对比图}}{47}{figure.caption.30}
 \contentsline {figure}{\numberline {4--11}{\ignorespaces 不同系统在四个说话人对上的相似度对比图}}{48}{figure.caption.31}
 \addvspace {10.0pt}
 \contentsline {figure}{\numberline {5--1}{\ignorespaces 跨语种语音转换和标准语音转换对比图}}{50}{figure.caption.32}
@@ -33,8 +33,5 @@
 \contentsline {figure}{\numberline {5--6}{\ignorespaces 语音转换数据集上d-vector分布图\relax }}{59}{figure.caption.37}
 \contentsline {figure}{\numberline {5--7}{\ignorespaces 训练阶段重构损失变化曲线\relax }}{60}{figure.caption.39}
 \contentsline {figure}{\numberline {5--8}{\ignorespaces MOS主观测评对比图\relax }}{62}{figure.caption.40}
-\addvspace {10.0pt}
-\addvspace {10.0pt}
-\addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}

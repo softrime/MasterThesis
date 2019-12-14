@@ -6,22 +6,24 @@
   语音的音色和音调，将语音中的原始说话人信息改变为特定的目标说话人。语音转换技术
   广泛应用于语音信号处理领域，尤其是在个性化语音合成、发音协助、语音增强、多媒体
   娱乐等领域有着非常广阔的应用前景。根据训练数据条件的不同，语音转换分为平行语料
-  的语音转换和非平行语料的语音转换，平行语料的语音转换一般指已有的原始说话人和
-  目标说话人的语料拥有相同的文本内容，而非平行语料的语音转换则不具备相同文本的语料
-  条件。由于平行语料收集的成本和难度往往较大，非平行语料的语音转换由于其更贴近实际
-  应用场景而在近年成为了语音转换任务的研究热点和难点。本研究以CycleGAN语音转换方法
-  为基础，主要探索两个方面：标准非平行语料的语音转换和跨语种的语音转换。
+  的语音转换和非平行语料的语音转换，平行语料的语音转换一般指原始说话人和
+  目标说话人的训练语料拥有相同的文本内容，而非平行语料的语音转换则不具备相同文本语料
+  的条件。由于平行语料收集的成本和难度往往较大，非平行语料的语音转换由于其更贴近实际
+  应用场景而在近年成为了语音转换任务的研究热点和难点。本研究以循环一致性生成对抗网络(CycleGAN)
+  语音转换方法为基础，主要探索两个方面：标准的非平行语料语音转换和跨语种的非平行语料语音转换。
 
   本文针对标准CycleGAN语音转换框架，提出半优化CycleGAN模型和基频辅助特征。半优化
-  CycleGAN模型通过非一致更新来提升转换模型性能；同时通过引入基频信息来提升
+  CycleGAN模型通过非一致更新来提升转换模型性能；同时通过额外引入基频信息来提升
   模型对音调的表达和转换能力。本文在中文数据集上验证所提出的方法。实验表明，半优化
   CycleGAN模型和基频辅助特征在主观测试和客观指标上均好于基线系统，消融测试也证明了
   两个改进各自带来的提升。
 
   对于难度更大的跨语种语音转换，本文针对跨语种领域差别较大的问题，提出在CycleGAN中
-  引入说话人特征的方法。通过可以前向传播和反向计算梯度的预训练说话人特征d-vector提取器，
-  来作为判别器的前置网络，使得判别器可以直接通过说话人特征来消除说话人之外的特征差异。
-  实验表明，d-vector的引入可以在转换说话人信息的前提下，有效提升转换语音的语义。
+  引入说话人特征的方法。该方法首先训练一个说话人分类器，然后将分类器的输出层去掉来得到
+  一个说话人特征提取器，将说话人特征提取器加入CycleGAN中，
+  作为判别器的前置网络，使得判别器可以直接通过说话人特征来消除说话人之外的语义特征差异。
+  实验表明，d-vector的引入可以在转换说话人信息的前提下，有效提升转换语音的语义。同时使用
+  语种无关的说话人特征提取器也能进一步提升转换语音的自然度和相似度。
 
 \end{abstract}
 
@@ -51,7 +53,9 @@
   extractor, which can broadcast both forward and backward, is added as the prenet of Discriminators, 
   which can shrink the acoustic domain to the speaker domain by eliminating residual information.
   Experiments demonstrate that the usage of d-vector can effectively keep the linguistic
-  information of converted speech while converting speaker identities.
+  information of converted speech while converting speaker identities. At the same time, 
+  using language-independent speaker feature extractors can further improve the naturalness and similarity 
+  of converted speech.
 
 
 \end{enabstract}

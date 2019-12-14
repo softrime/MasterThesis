@@ -22,7 +22,7 @@
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=12cm,trim=0 0 0 0,clip]{figure/4_wavenet.png}
+    \includegraphics[width=12cm,trim=0 10 0 0,clip]{figure/4_wavenet.png}
     \bicaption[WaveNet模型结构图\cite{oord2016wavenet}]
     {WaveNet模型结构图}
     {Architecture of the WaveNet}
@@ -157,7 +157,7 @@
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=14.5cm,trim=0 0 200 0,clip]{figure/4_proposedarch.pdf}
+    \includegraphics[width=12cm,trim=0 10 200 0,clip]{figure/4_proposedarch.pdf}
     \bicaption[基于半优化CycleGAN的语音转换系统结构图]
     {基于半优化CycleGAN的语音转换系统结构图}
     {Architecture of the semi-optimized CycleGAN based Voice Conversion}
@@ -175,7 +175,7 @@ CycleGAN作为语音转换模型，WaveNet作为神经网络声码器，以实�
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=10cm,trim=0 150 300 0,clip]{figure/4_dataflow.pdf}
+    \includegraphics[width=8cm,trim=0 150 300 0,clip]{figure/4_dataflow.pdf}
     \bicaption[标准CycleGAN中最小更新过程示意图]
     {标准CycleGAN中最小更新过程示意图}
     {Schematic diagram of minimum update processes in conventional CycleGAN}
@@ -202,7 +202,7 @@ CycleGAN作为语音转换模型，WaveNet作为神经网络声码器，以实�
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=13cm,trim=0 100 250 0,clip]{figure/4_semi.pdf}
+    \includegraphics[width=10cm,trim=0 110 250 0,clip]{figure/4_semi.pdf}
     \bicaption[标准CycleGAN和半优化CycleGAN重构损失函数的对比图]
     {标准CycleGAN和半优化CycleGAN重构损失函数的对比图}
     {Comparison of Cycle-consistency loss between conventional CycleGAN and Semi-optimized CycleGAN}
@@ -313,11 +313,11 @@ Pixel Shuffler是一种卷积网络中的升采样方法，其通过对特征矩
     \centering
     \bisubcaptionbox{男性说话人转女性说话人}%
                     {Male to female}%
-                    [12cm]{\includegraphics[width=12cm,trim=50 320 350 50,clip]{figure/4_msd.png}} \\
+                    [12cm]{\includegraphics[width=12cm,trim=50 320 350 60,clip]{figure/4_msd.png}} \\
     \vspace{0.5cm}
     \bisubcaptionbox{女性说话人转男性说话人}%
                     {Female to male}%bisubcaptionbox
-                    [12cm]{\includegraphics[width=12cm,trim=50 150 350 230,clip]{figure/4_msd.png}}
+                    [12cm]{\includegraphics[width=12cm,trim=50 150 350 240,clip]{figure/4_msd.png}}
     \bicaption{标准CycleGAN和半优化CycleGAN在训练过程中梅尔频谱距离的对比}
               {Comparison of Msp distance between conventional CycleGAN and SoCycleGAN during training}
     \label{fig:msd}
@@ -334,8 +334,11 @@ Proposed代表使用了基频辅助特征后转换的基频。可以发现相比
 
 \begin{table} 
     \centering 
+    \bicaption{转换基频和目标基频之间误差、均值和方差的对比}{Comparison of MSE, mean and standard deviation between target and converted F0}
+
     \begin{subtable}[t]{0.9\textwidth}
         \centering
+        \bicaption{女性说话人转男性说话人}{Female to male}
         \begin{tabular}[t]{ cccc }
             \toprule
             % \hline
@@ -359,7 +362,6 @@ Proposed代表使用了基频辅助特征后转换的基频。可以发现相比
             %\hline
             \bottomrule
             \end{tabular} 
-        \bicaption{女性说话人转男性说话人}{Female to male}
         \label{tab:f0f2m}
     \end{subtable}
     \bigskip
@@ -367,6 +369,7 @@ Proposed代表使用了基频辅助特征后转换的基频。可以发现相比
     \quad
     \begin{subtable}[t]{0.9\textwidth}
         \centering
+        \bicaption{男性说话人转女性说话人}{Male to female}
         \begin{tabular}[t]{ cccc }
             \toprule
             %\hline
@@ -390,11 +393,9 @@ Proposed代表使用了基频辅助特征后转换的基频。可以发现相比
             %\hline
             \bottomrule
           \end{tabular}
-        \bicaption{男性说话人转女性说话人}{Male to female}
         \label{tab:f0m2f}
     \end{subtable}
 
-\bicaption{Comparison of MSE, mean and standard deviation between target and converted F0}{转换基频和目标基频之间误差、均值和方差的对比}  
 \label{tab:mse}
 \end{table}  
 
@@ -421,7 +422,7 @@ Proposed代表使用了基频辅助特征后转换的基频。可以发现相比
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=13cm,trim=0 280 0 0,clip]{figure/4_mos.png}
+    \includegraphics[width=13cm,trim=0 290 0 0,clip]{figure/4_mos.png}
     \bicaption[不同方法在语音自然度上的平均主观意见分对比图]
     {不同方法在语音自然度上的平均主观意见分对比图}
     {MOS comparison among different methods}
@@ -430,21 +431,13 @@ Proposed代表使用了基频辅助特征后转换的基频。可以发现相比
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=13cm,trim=0 280 0 0,clip]{figure/4_mosdata.png}
+    \includegraphics[width=13cm,trim=0 290 0 20,clip]{figure/4_mosdata.png}
     \bicaption[不同大小训练数据集在语音自然度上的平均主观意见分对比图]
     {不同大小训练数据集在语音自然度上的平均主观意见分对比图}
     {MOS comparison among different training data set}
     \label{fig:mosdata}
 \end{figure}
 
-\begin{figure}[!htp]
-    \centering
-    \includegraphics[width=13cm,trim=0 250 0 50,clip]{figure/4_sim.png}
-    \bicaption[不同系统在四个说话人对上的相似度对比图]
-    {不同系统在四个说话人对上的相似度对比图}
-    {Comparison of similarity to target speaker in four speaker pairs}
-    \label{fig:sim}
-\end{figure}
 
 图~\ref{fig:mos}展示了MOS测试的结果。对比系统P和P w/o SoCycleGAN，可以看到半优化CycleGAN在自然度上的提升。
 从P和P w/o F0的对比，也能发现基频辅助特征的提升，
@@ -455,6 +448,16 @@ SWN代表单说话人WaveNet，是由2000句特定说话人的训练集训练而
 可以发现提出的系统在至少500句的训练集上可以生成较高音质的转换音频。
 注意到我们对于小数据集没有对模型结构进行调整，因此在音质上仍有提升的空间。
 相似度实验的结果在图~\ref{fig:sim}展示，可以发现所提框架在四个说话人对上都有更好的相似度表现。
+
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width=13cm,trim=0 250 0 60,clip]{figure/4_sim.png}
+    \bicaption[不同系统在四个说话人对上的相似度对比图]
+    {不同系统在四个说话人对上的相似度对比图}
+    {Comparison of similarity to target speaker in four speaker pairs}
+    \label{fig:sim}
+\end{figure}
 
 \section{本章小结}
 

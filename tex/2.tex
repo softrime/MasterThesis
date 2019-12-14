@@ -7,7 +7,7 @@
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=10cm,trim=50 0 310 0,clip]{figure/2_vc_basis.pdf}
+    \includegraphics[width=8cm,trim=50 0 310 10,clip]{figure/2_vc_basis.pdf}
     \bicaption[语音转换系统示意图]
     {语音转换系统示意图}
     {Schematic diagram of the voice conversion system}
@@ -50,7 +50,7 @@ $$MCD(a^{cvt}, a^{tgt})=\frac{10\sqrt{2}}{ln10T}\sum^{T-1}_{t=0}\sqrt{\sum^{D}_{
 因此作为语音转换的主要对象，声学特征的分析对转换模型的建模复杂度和声码器的合成音质都有非常直接的影响。常见的声学特征及其特性如表~\ref{tab:vc_feats}所示\cite{Nurminen2012Voice}。
 
 \begin{table}[!hpt]
-    \caption[常用语音转换声学特征示例]{常用语音转换声学特征示例}
+    \bicaption{常用语音转换声学特征示例}{Typical acoustic features used in voice conversion}
     \label{tab:vc_feats}
     \centering
     \begin{tabular}{p{0.3\columnwidth}p{0.6\columnwidth}} 
@@ -134,7 +134,7 @@ $$MCD(a^{cvt}, a^{tgt})=\frac{10\sqrt{2}}{ln10T}\sum^{T-1}_{t=0}\sqrt{\sum^{D}_{
 
     \begin{figure}[!htp]
         \centering
-        \includegraphics[width=13cm,trim=10 160 260 40,clip]{figure/2_vocoder.pdf}
+        \includegraphics[width=13cm,trim=10 180 280 60,clip]{figure/2_vocoder.pdf}
         \bicaption[STRAIGHT声码器模型框架]
         {STRAIGHT声码器模型框架}
         {Framework of the STRAIGHT vocoder}
@@ -214,7 +214,7 @@ $$MCD(a^{cvt}, a^{tgt})=\frac{10\sqrt{2}}{ln10T}\sum^{T-1}_{t=0}\sqrt{\sum^{D}_{
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=13cm,trim=100 120 150 90,clip]{figure/2_dtw.pdf}
+    \includegraphics[width=13cm,trim=100 120 150 110,clip]{figure/2_dtw.pdf}
     \bicaption[DTW算法序列对齐示意图]
     {DTW算法序列对齐示意图}
     {Schematic diagram of DTW alignment algorithm}
@@ -324,7 +324,7 @@ GMM的参数可以通过期望最大化(Expectation-Maximization, EM)算法来�
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=10cm,trim=50 70 330 50,clip]{figure/2_mlp.pdf}
+    \includegraphics[width=8cm,trim=50 80 330 60,clip]{figure/2_mlp.pdf}
     \bicaption[多层感知机结构图]
     {多层感知机结构图}
     {Architecture of the Multilayer Perceptrons}

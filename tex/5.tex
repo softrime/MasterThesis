@@ -44,7 +44,7 @@
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=14cm,trim=0 200 80 0,clip]{figure/5_clvc.pdf}
+    \includegraphics[width=14cm,trim=0 200 80 10,clip]{figure/5_clvc.pdf}
     \bicaption[跨语种语音转换和标准语音转换对比图]
     {跨语种语音转换和标准语音转换对比图}
     {Comparison of cross-lingual Voice Conversion and standard Voice Conversion}
@@ -97,7 +97,7 @@ x-vector，j-vector等\cite{snyder2016deep,chen2015multi,shi2017double}。本文
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=12cm,trim=0 10 0 0,clip]{figure/5_dvector.png}
+    \includegraphics[width=10cm,trim=0 10 0 0,clip]{figure/5_dvector.png}
     \bicaption[基于DNN的说话人验证示意图\cite{variani2014deep}]
     {基于DNN的说话人验证示意图\cite{variani2014deep}}
     {Schematic diagram of the DNN model for speaker verification}
@@ -146,7 +146,7 @@ DNN对其中的每一帧都可以得到一个隐层向量，将所有帧的隐�
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=10cm,trim=0 220 370 0,clip]{figure/5_dvectorcyclegan.pdf}
+    \includegraphics[width=8cm,trim=0 230 370 0,clip]{figure/5_dvectorcyclegan.pdf}
     \bicaption[基于d-vector提取器的CycleGAN模型示意图]
     {基于d-vector提取器的CycleGAN模型示意图}
     {Schematic diagram of the d-vector extractor based CycleGAN}
@@ -181,7 +181,7 @@ $SE$在其中可以看成一个可以前向和反向传播的过滤模型，该�
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=12cm,trim=0 79 380 0,clip]{figure/5_d.pdf}
+    \includegraphics[width=10cm,trim=0 79 380 0,clip]{figure/5_d.pdf}
     \bicaption[说话人识别模型网络结构图]
     {说话人识别模型网络结构图}
     {Architecture of the speaker verification networks}
@@ -266,35 +266,38 @@ CN-celeb是由清华大学发布的中文说话人识别开源数据集，该数
 % 1.d-vector在语音转换数据集上的分布
 
 \begin{figure}[!ht]
-    \begin{minipage}[b]{\linewidth}
-        \begin{subfigure}[b]{0.33\linewidth}
+    \centering
+    \begin{minipage}[b]{0.9\linewidth}
+        \centering
+        \begin{subfigure}[b]{0.3\linewidth}
             \centering
             \includegraphics[width=\linewidth,trim=0 0 200 0,clip]{figure/5_dvector11.pdf}
             \caption{100 speakers w/o adv}
         \end{subfigure}        
-        \begin{subfigure}[b]{0.33\linewidth}
+        \begin{subfigure}[b]{0.3\linewidth}
             \centering
             \includegraphics[width=\linewidth,trim=0 0 200 0,clip]{figure/5_dvector12.pdf}
             \caption{500 speakers w/o adv}
         \end{subfigure}   
-        \begin{subfigure}[b]{0.33\linewidth}
+        \begin{subfigure}[b]{0.3\linewidth}
             \centering
             \includegraphics[width=\linewidth,trim=0 0 200 0,clip]{figure/5_dvector13.pdf}
             \caption{1000 speakers w/o adv}
         \end{subfigure}   
     \end{minipage}
-    \begin{minipage}[b]{\linewidth}
-        \begin{subfigure}[b]{0.33\linewidth}
+    \begin{minipage}[b]{0.9\linewidth}
+        \centering
+        \begin{subfigure}[b]{0.3\linewidth}
             \centering
             \includegraphics[width=\linewidth,trim=0 0 200 0,clip]{figure/5_dvector21.pdf}
             \caption{100 speakers w/ adv}
         \end{subfigure}        
-        \begin{subfigure}[b]{0.33\linewidth}
+        \begin{subfigure}[b]{0.3\linewidth}
             \centering
             \includegraphics[width=\linewidth,trim=0 0 200 0,clip]{figure/5_dvector22.pdf}
             \caption{500 speakers w/ adv}
         \end{subfigure}   
-        \begin{subfigure}[b]{0.33\linewidth}
+        \begin{subfigure}[b]{0.3\linewidth}
             \centering
             \includegraphics[width=\linewidth,trim=0 0 200 0,clip]{figure/5_dvector23.pdf}
             \caption{1000 speakers w/ adv}
@@ -433,6 +436,7 @@ LIDV-CycleGAN模型的偏好对比，另一组为DV-CycleGAN和LIDV-CycleGAN的�
 
 \begin{table}
     \centering
+    \bicaption{转换模型的相似度偏好测试(\%)}{The result of ABX test of different methods}
     \begin{tabular}[t]{ ccc }
         \toprule
         % \hline
@@ -453,7 +457,6 @@ LIDV-CycleGAN模型的偏好对比，另一组为DV-CycleGAN和LIDV-CycleGAN的�
         无偏好 & 75 & 87.5           \\
         \bottomrule
         \end{tabular} 
-    \bicaption{转换模型的相似度偏好测试(\%)}{The result of ABX test of different methods}
     \label{tab:simtable}
 \end{table}
 
