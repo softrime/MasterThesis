@@ -31,11 +31,9 @@
 \contentsline {figure}{\numberline {5--4}{\ignorespaces 基于d-vector提取器的CycleGAN模型示意图}}{55}{figure.caption.35}
 \contentsline {figure}{\numberline {5--5}{\ignorespaces 说话人识别模型网络结构图}}{56}{figure.caption.36}
 \contentsline {figure}{\numberline {5--6}{\ignorespaces 语音转换数据集上d-vector分布图\relax }}{59}{figure.caption.37}
-\contentsline {figure}{\numberline {5--7}{\ignorespaces 语音转换数据集上d-vector分布图\relax }}{59}{figure.caption.39}
+\contentsline {figure}{\numberline {5--7}{\ignorespaces 训练阶段重构损失变化曲线\relax }}{60}{figure.caption.39}
+\contentsline {figure}{\numberline {5--8}{\ignorespaces MOS主观测评对比图\relax }}{62}{figure.caption.40}
 \addvspace {10.0pt}
-\addvspace {10.0pt}
-\addvspace {10.0pt}
-\contentsline {figure}{\numberline {--8}{\ignorespaces 绘制流程图效果\relax }}{65}{figure.caption.43}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}

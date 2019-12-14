@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  13 DEC 2019 13:30
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  14 DEC 2019 17:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3511,7 +3511,7 @@ Underfull \vbox (badness 4291) has occurred while \output is active []
  [54] [55]
 File: figure/5_d.pdf Graphic file (type pdf)
 <use figure/5_d.pdf>
- [56] [57]
+ [56] [57] [58]
 File: figure/5_dvector11.pdf Graphic file (type pdf)
 <use figure/5_dvector11.pdf>
 File: figure/5_dvector12.pdf Graphic file (type pdf)
@@ -3524,26 +3524,23 @@ File: figure/5_dvector22.pdf Graphic file (type pdf)
 <use figure/5_dvector22.pdf>
 File: figure/5_dvector23.pdf Graphic file (type pdf)
 <use figure/5_dvector23.pdf>
+ [59]
 File: figure/5_cycle1.pdf Graphic file (type pdf)
 <use figure/5_cycle1.pdf>
 File: figure/5_cycle2.pdf Graphic file (type pdf)
 <use figure/5_cycle2.pdf>
-) [58] [59] [60
+ [60] [61]
+File: figure/5_mosintra.pdf Graphic file (type pdf)
+<use figure/5_mosintra.pdf>
+File: figure/5_mosinter.pdf Graphic file (type pdf)
+<use figure/5_mosinter.pdf>
+ [62]) [63] [64
 
-] (./tex/6.tex) (./tex/app_maxwell_equations.tex [61
+] (./tex/6.tex) [65
 
-] [62
-
-]) (./tex/app_flow_chart.tex [63] [64
+] [66
 
 ]
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'FandolHei-Regular' does not contain script 'CJK'.
-*************************************************
-LaTeX Font Info:    Font shape `TU/SourceSansPro(0)/m/n' will be
-(Font)              scaled to size 10.84042pt on input line 5.
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -3551,7 +3548,7 @@ LaTeX Font Info:    Font shape `TU/SourceSansPro(0)/m/n' will be
 *************************************************
 \g__fontspec_family_FandolFang-Regular_int=\count560
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
-(Font)              scaled to size 10.84042pt on input line 6.
+(Font)              scaled to size 10.84042pt on input line 90.
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -3563,9 +3560,7 @@ LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 . - 'normal' (m/n) with NFSS spec.: <->"[FandolFang-Regular.otf]/OT"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-(./figure/flow_chart.tex)) [65] [66
 
-]
 Underfull \hbox (badness 4819) in paragraph at lines 90--90
 []\TU/xits(0)/m/n/12.045 NURMINEN J, SILÉN H, POPA V, et al. Voice Conversion[G\TU/SourceCodePro(0)/m/n/12.045 /\TU/xits(0)/m/n/12.045 OL]\TU/SourceCodePro(0)/m/n/12.045 //
  []
@@ -3653,12 +3648,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60801 strings out of 493007
- 1220723 string characters out of 6136718
- 1754738 words of memory out of 5000000
- 63765 multiletter control sequences out of 15000+600000
- 535930 words of font info for 168 fonts, out of 8000000 for 9000
+ 60643 strings out of 493007
+ 1217047 string characters out of 6136718
+ 1754979 words of memory out of 5000000
+ 63612 multiletter control sequences out of 15000+600000
+ 535946 words of font info for 170 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 75i,18n,95p,10472b,6700s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,18n,95p,10472b,6702s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on thesis.pdf (109 pages).

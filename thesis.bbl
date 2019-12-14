@@ -4510,6 +4510,46 @@
       \field{dateera}{ce}
       \keyw{fan2019cn}
     \endentry
+    \entry{maaten2008visualizing}{article}{}
+      \name{author}{2}{}{%
+        {{hash=deb663ae2bd381f113bc225685e27631}{%
+           family={Maaten},
+           familyi={M\bibinitperiod},
+           given={Laurens\bibnamedelimb van\bibnamedelima der},
+           giveni={L\bibinitperiod\bibinitdelim v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=9a8750ccdb2a4cf14d2655face1ce016}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{ad62cbfc0438ddec0b80b9cb07366c87}
+      \strng{fullhash}{ac17037d14d227b688c9c7e3ea6dac6f}
+      \strng{bibnamehash}{ac17037d14d227b688c9c7e3ea6dac6f}
+      \strng{authorbibnamehash}{ac17037d14d227b688c9c7e3ea6dac6f}
+      \strng{authornamehash}{ad62cbfc0438ddec0b80b9cb07366c87}
+      \strng{authorfullhash}{ac17037d14d227b688c9c7e3ea6dac6f}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of machine learning research}
+      \field{langid}{english}
+      \field{number}{Nov}
+      \field{title}{Visualizing data using t-SNE}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{9}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{pages}{2579\bibrangedash 2605}
+      \range{pages}{27}
+      \keyw{maaten2008visualizing}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
