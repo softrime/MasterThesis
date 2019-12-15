@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  14 DEC 2019 20:55
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  15 DEC 2019 16:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3337,17 +3337,7 @@ File: pdf/originality.pdf Graphic file (type pdf)
 
 ] [12
 
-] (./thesis.loa)
-\tf@loa=\write10
-\openout10 = `thesis.loa'.
-
- (./tex/nomenclature.tex [13
-
-] [14
-
-] [15
-
-]) [16]
+]
 \c@pagesLTS.Roman.1.local.count=\count555
 \c@pagesLTS.pnc.arabic=\count556
 \c@pagesLTS.double.arabic=\count557
@@ -3356,7 +3346,6 @@ File: pdf/originality.pdf Graphic file (type pdf)
 第一章
 [1
 
-
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -3364,9 +3353,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-Underfull \vbox (badness 4940) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5] [6]) (./tex/2.tex [7] [8
+ [5]
+Underfull \vbox (badness 2065) has occurred while \output is active []
+
+ [6]) (./tex/2.tex [7] [8
 
 ]
 第二章
@@ -3465,16 +3457,19 @@ File: figure/4_wavenetworld2.png Graphic file (type bmp)
 <figure/4_wavenetworld2.png>
 File: figure/4_proposedarch.pdf Graphic file (type pdf)
 <use figure/4_proposedarch.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [38]
 File: figure/4_dataflow.pdf Graphic file (type pdf)
 <use figure/4_dataflow.pdf>
  [39]
 File: figure/4_semi.pdf Graphic file (type pdf)
 <use figure/4_semi.pdf>
- [40]
-Underfull \vbox (badness 3792) has occurred while \output is active []
 
- [41]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40] [41]
 File: figure/4_networks.pdf Graphic file (type pdf)
 <use figure/4_networks.pdf>
  [42] [43]
@@ -3482,17 +3477,15 @@ File: figure/4_msd.png Graphic file (type bmp)
 <figure/4_msd.png>
 File: figure/4_msd.png Graphic file (type bmp)
 <figure/4_msd.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [44] [45] [46]
 File: figure/4_mos.png Graphic file (type bmp)
 <figure/4_mos.png>
 File: figure/4_mosdata.png Graphic file (type bmp)
 <figure/4_mosdata.png>
+ [47]
 File: figure/4_sim.png Graphic file (type bmp)
 <figure/4_sim.png>
- [47]) (./tex/5.tex [48]
+) (./tex/5.tex [48]
 第五章
 [49
 
@@ -3530,12 +3523,12 @@ File: figure/5_dvector22.pdf Graphic file (type pdf)
 <use figure/5_dvector22.pdf>
 File: figure/5_dvector23.pdf Graphic file (type pdf)
 <use figure/5_dvector23.pdf>
- [58]
+ [58] [59]
 File: figure/5_cycle1.pdf Graphic file (type pdf)
 <use figure/5_cycle1.pdf>
 File: figure/5_cycle2.pdf Graphic file (type pdf)
 <use figure/5_cycle2.pdf>
- [59] [60] [61]
+ [60] [61]
 File: figure/5_mosintra.pdf Graphic file (type pdf)
 <use figure/5_mosintra.pdf>
 File: figure/5_mosinter.pdf Graphic file (type pdf)
@@ -3619,8 +3612,8 @@ AED: pageslts setting LastPage
 [79
 
 ]
-\tf@thm=\write11
-\openout11 = `thesis.thm'.
+\tf@thm=\write10
+\openout10 = `thesis.thm'.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 107.
 Package atveryend Info: Executing hook `AfterLastShipout' on input line 107.
@@ -3637,21 +3630,17 @@ Package pageslts Info: Total number of pages is odd.
 (./thesis.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 107.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 107.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60621 strings out of 493007
- 1216027 string characters out of 6136718
- 1756924 words of memory out of 5000000
- 63597 multiletter control sequences out of 15000+600000
+ 60624 strings out of 493007
+ 1216939 string characters out of 6136718
+ 1753859 words of memory out of 5000000
+ 63605 multiletter control sequences out of 15000+600000
  535938 words of font info for 169 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  75i,18n,95p,10472b,6702s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (103 pages).
+Output written on thesis.pdf (99 pages).
