@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  15 DEC 2019 16:09
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  16 DEC 2019 10:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3259,49 +3259,6 @@ LaTeX Font Info:    Font shape `TU/SourceCodePro(1)/m/n' will be
 ] [4
 
 ]
-File: pdf/originality.pdf Graphic file (type pdf)
-<use pdf/originality.pdf>
-File: pdf/originality.pdf Graphic file (type pdf)
-<use pdf/originality.pdf>
-File: pdf/originality.pdf Graphic file (type pdf)
-<use pdf/originality.pdf, page 1>
-File: pdf/originality.pdf Graphic file (type pdf)
-<use pdf/originality.pdf, page 1>
-File: pdf/originality.pdf Graphic file (type pdf)
-<use pdf/originality.pdf, page 1>
-File: pdf/originality.pdf Graphic file (type pdf)
-<use pdf/originality.pdf, page 1>
-File: pdf/originality.pdf Graphic file (type pdf)
-<use pdf/originality.pdf, page 1>
- [5
-
-] [6
-
-]
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'FandolSong-Regular' does not contain script 'CJK'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'FandolSong-Regular(1)' created for font 'FandolSong-Regular'
-. with options [Script={CJK},Extension={.otf},BoldFont={FandolSong-Bold}].
-.  
-.  This font family consists of the following NFSS series/shapes:
-.  
-. - 'normal' (m/n) with NFSS spec.: <->"[FandolSong-Regular.otf]/OT"
-. - 'small caps'  (m/sc) with NFSS spec.: 
-. - 'bold' (bx/n) with NFSS spec.: <->"[FandolSong-Bold.otf]/OT"
-. - 'bold small caps'  (bx/sc) with NFSS spec.: 
-.................................................
-[7
-
-
-] [8
-
-]
 \c@pagesLTS.Alph.1.local.count=\count551
 \c@pagesLTS.pnc.Roman=\count552
 \c@pagesLTS.double.Roman=\count553
@@ -3477,15 +3434,20 @@ File: figure/4_msd.png Graphic file (type bmp)
 <figure/4_msd.png>
 File: figure/4_msd.png Graphic file (type bmp)
 <figure/4_msd.png>
- [44] [45] [46]
+ [44]
+Overfull \hbox (2.81543pt too wide) in paragraph at lines 410--465
+ [][] 
+ []
+
+[45]
 File: figure/4_mos.png Graphic file (type bmp)
 <figure/4_mos.png>
 File: figure/4_mosdata.png Graphic file (type bmp)
 <figure/4_mosdata.png>
- [47]
+ [46]
 File: figure/4_sim.png Graphic file (type bmp)
 <figure/4_sim.png>
-) (./tex/5.tex [48]
+ [47]) (./tex/5.tex [48]
 第五章
 [49
 
@@ -3635,12 +3597,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60624 strings out of 493007
- 1216939 string characters out of 6136718
- 1753859 words of memory out of 5000000
- 63605 multiletter control sequences out of 15000+600000
- 535938 words of font info for 169 fonts, out of 8000000 for 9000
+ 60539 strings out of 493007
+ 1211911 string characters out of 6136718
+ 1753602 words of memory out of 5000000
+ 63527 multiletter control sequences out of 15000+600000
+ 535914 words of font info for 166 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 75i,18n,95p,10472b,6702s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,12n,95p,10472b,6702s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (99 pages).
+Output written on thesis.pdf (95 pages).

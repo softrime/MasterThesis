@@ -2,7 +2,73 @@
 语音是人类交流最常用、最直接、最有效的信息载体之一。在信息数字化时代，科学家们致力于将这种最有效的交流方式
 应用于人机交互中，使得人类可以直接通过语音来与不同的机器设备交互，即语音人机交互。随着人工智能时代的到来，
 简单的人机交互已经不能满足人们的需要，智能化，个性化已经成为语音人机交互的发展方向。对于机器而言，一个人机
-交互的完整流程通常包括语音识别、语义理解、对话管理和语音合成四个步骤。其中语音合成作为交互的最后一个环节，
+交互的完整流程通常包括语音识别、
+% \begin{table} 
+%     \centering 
+%     \bicaption{转换基频和目标基频之间误差、均值和方差的对比}{Comparison of MSE, mean and standard deviation between target and converted F0}
+
+%     \begin{subtable}[t]{0.9\textwidth}
+%         \centering
+%         \bicaption{女性说话人转男性说话人}{Female to male}
+%         \begin{tabular}[t]{ cccc }
+%             \toprule
+%             % \hline
+%             %\multirow{1}{*}{Methods} & \multicolumn{3}{|c|}{Female to male} \\
+%              %\cline{2-4}
+%             Methods  & RMSE (Hz) & Mean (Hz) & Std (Hz) \\
+%              %\hline
+%              %\hline
+%             \midrule
+%             Target                  & 0 & 133.25 & 34.72             \\
+%             \midrule
+%             %\hline
+%             %\hline
+%             Source                    & 65.12 & 236.11 & 55.00            \\
+%             %\hline
+%             Linear                       & 17.13 & 127.10 & 28.58               \\
+%             %\hline
+%             Proposed w/o LF0                       & 17.44 & 124.66 & 27.74            \\
+%             %\hline
+%             Proposed                       & \textbf{16.69} & 126.31 & \textbf{29.82}   \\
+%             %\hline
+%             \bottomrule
+%             \end{tabular} 
+%         \label{tab:f0f2m}
+%     \end{subtable}
+%     \bigskip
+%     \vspace{1mm}
+%     \quad
+%     \begin{subtable}[t]{0.9\textwidth}
+%         \centering
+%         \bicaption{男性说话人转女性说话人}{Male to female}
+%         \begin{tabular}[t]{ cccc }
+%             \toprule
+%             %\hline
+%             %\multirow{2}*{Methods} & \multicolumn{3}{|c|}{Male to female}\\
+%              %\cline{2-4}
+%              Methods & RMSE(Hz) & Mean (Hz) & Std (Hz) \\
+%              %\hline
+%              %\hline
+%             \midrule
+%             Target                   & 0 & 236.11 & 55.00            \\
+%             \midrule
+%             %\hline
+%             %\hline
+%             Source                        & 67.10 & 133.25 & 34.72            \\
+%             %\hline
+%             Linear                     & 34.13 & 248.04 & 67.04              \\
+%             %\hline
+%             Proposed w/o LF0                   & 32.51 & 254.71 & 59.53              \\
+%             %\hline
+%             Proposed                      & \textbf{30.37} & 248.66 & \textbf{58.92}   \\
+%             %\hline
+%             \bottomrule
+%           \end{tabular}
+%         \label{tab:f0m2f}
+%     \end{subtable}
+
+% \label{tab:mse}
+% \end{table}  语义理解、对话管理和语音合成四个步骤。其中语音合成作为交互的最后一个环节，
 主要负责将机器生成的文本转换成语音反馈给用户。其中，所生成语音的个性化程度是影响人机交互体验的重要因素。
 语音转换即可以通过对语音中的说话人特性进行调整和修改，用相对较少的数据实现对语音的个性化生成。
 
@@ -106,11 +172,11 @@ WaveNet\cite{oord2016wavenet,tamamori2017speaker,oord2017parallel}、WaveRNN\cit
 基于神经网络的方法在近两年发展迅速，许多不同的模型都被提出可以实现语音转换的任务，包括人工神经网络 (Artificial Neural Networks, ANN)\cite{desai2010spectral} 、
 深度神经网络 (Deep Neural Networks, DNN)\cite{aryal2015articulatory,chen2014voice} 、
 循环神经网络 (Recurrent Neural Networks, RNN)\cite{nakashika2015voice,sun2015voice} 、
-卷积神经网络 (Convolution Neural Networks, CNN)\cite{kaneko2017sequence}，生成对抗网络(Generative Adversarial Network, GAN)\cite{hsu2017voice,kaneko2017sequence} 、
+卷积神经网络 (Convolutional Neural Networks, CNN)\cite{kaneko2017sequence}，生成对抗网络(Generative Adversarial Network, GAN)\cite{hsu2017voice,kaneko2017sequence} 、
 序列到序列 (Sequence-to-Sequence)\cite{kameoka2018convs2s,tanaka2019atts2s,zhang2019improving} 
 和基于WaveNet的方法\cite{polyak2019attention}。
 
-非平行语料的转换方法可以分为三大类：基于音素后验概率图 (Phone PosteriorGram, PPG) 的方法、基于对抗学习 (Adversarial Learning) 的方法和基于变分自编码器 (Variational AutoEncoder, VAE) 的方法。
+非平行语料的转换方法可以分为三大类：基于音素后验概率图 (Phonetic PosteriorGrams, PPG) 的方法、基于对抗学习 (Adversarial Learning) 的方法和基于变分自编码器 (Variational AutoEncoder, VAE) 的方法。
 基于音素后验概率图的方法主要是通过语音识别模型从目标说话人的声学特征中提取说话人无关的语义信息，然后再直接
 学习从语义信息到目标说话人的声学特征的映射关系\cite{sun2016phonetic}。语义信息的表示即声学建模单元的后验概率，可以根据不同任务选择
 不同的建模单元，也可以根据不同的声码器进行不同的优化\cite{liu2018hccl,lu2019compact,liu2019jointly,zhou2019cross}。

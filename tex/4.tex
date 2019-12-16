@@ -319,7 +319,7 @@ Pixel Shuffler是一种卷积网络中的升采样方法，其通过对特征矩
                     {Female to male}%bisubcaptionbox
                     [12cm]{\includegraphics[width=12cm,trim=50 150 350 240,clip]{figure/4_msd.png}}
     \bicaption{标准CycleGAN和半优化CycleGAN在训练过程中梅尔频谱距离的对比}
-              {Comparison of Msp distance between conventional CycleGAN and SoCycleGAN during training}
+              {Comparison of Msp distance between conventional CycleGAN and Semi-optimized CycleGAN during training}
     \label{fig:msd}
   \end{figure}
 
@@ -332,71 +332,138 @@ Proposed代表使用了基频辅助特征后转换的基频。可以发现相比
 （2）辅助特征通过引入显示的基频特征，可以帮助模型学习梅尔频谱中和基频信息高度相关的隐含表示，
 进而提升基频的转换能力。
 
+% \begin{table} 
+%     \centering 
+%     \bicaption{转换基频和目标基频之间误差、均值和方差的对比}{Comparison of MSE, mean and standard deviation between target and converted F0}
+
+%     \begin{subtable}[t]{0.9\textwidth}
+%         \centering
+%         \bicaption{女性说话人转男性说话人}{Female to male}
+%         \begin{tabular}[t]{ cccc }
+%             \toprule
+%             % \hline
+%             %\multirow{1}{*}{Methods} & \multicolumn{3}{|c|}{Female to male} \\
+%              %\cline{2-4}
+%             Methods  & RMSE (Hz) & Mean (Hz) & Std (Hz) \\
+%              %\hline
+%              %\hline
+%             \midrule
+%             Target                  & 0 & 133.25 & 34.72             \\
+%             \midrule
+%             %\hline
+%             %\hline
+%             Source                    & 65.12 & 236.11 & 55.00            \\
+%             %\hline
+%             Linear                       & 17.13 & 127.10 & 28.58               \\
+%             %\hline
+%             Proposed w/o LF0                       & 17.44 & 124.66 & 27.74            \\
+%             %\hline
+%             Proposed                       & \textbf{16.69} & 126.31 & \textbf{29.82}   \\
+%             %\hline
+%             \bottomrule
+%             \end{tabular} 
+%         \label{tab:f0f2m}
+%     \end{subtable}
+%     \bigskip
+%     \vspace{1mm}
+%     \quad
+%     \begin{subtable}[t]{0.9\textwidth}
+%         \centering
+%         \bicaption{男性说话人转女性说话人}{Male to female}
+%         \begin{tabular}[t]{ cccc }
+%             \toprule
+%             %\hline
+%             %\multirow{2}*{Methods} & \multicolumn{3}{|c|}{Male to female}\\
+%              %\cline{2-4}
+%              Methods & RMSE(Hz) & Mean (Hz) & Std (Hz) \\
+%              %\hline
+%              %\hline
+%             \midrule
+%             Target                   & 0 & 236.11 & 55.00            \\
+%             \midrule
+%             %\hline
+%             %\hline
+%             Source                        & 67.10 & 133.25 & 34.72            \\
+%             %\hline
+%             Linear                     & 34.13 & 248.04 & 67.04              \\
+%             %\hline
+%             Proposed w/o LF0                   & 32.51 & 254.71 & 59.53              \\
+%             %\hline
+%             Proposed                      & \textbf{30.37} & 248.66 & \textbf{58.92}   \\
+%             %\hline
+%             \bottomrule
+%           \end{tabular}
+%         \label{tab:f0m2f}
+%     \end{subtable}
+
+% \label{tab:mse}
+% \end{table}  
+
+
 \begin{table} 
     \centering 
     \bicaption{转换基频和目标基频之间误差、均值和方差的对比}{Comparison of MSE, mean and standard deviation between target and converted F0}
 
-    \begin{subtable}[t]{0.9\textwidth}
-        \centering
-        \bicaption{女性说话人转男性说话人}{Female to male}
-        \begin{tabular}[t]{ cccc }
-            \toprule
-            % \hline
-            %\multirow{1}{*}{Methods} & \multicolumn{3}{|c|}{Female to male} \\
-             %\cline{2-4}
-            Methods  & RMSE (Hz) & Mean (Hz) & Std (Hz) \\
-             %\hline
-             %\hline
-            \midrule
-            Target                  & 0 & 133.25 & 34.72             \\
-            \midrule
+    %\begin{subtable}[t]{0.9\textwidth}
+    %    \centering
+    %    \bicaption{女性说话人转男性说话人}{Female to male}
+    \begin{tabular}[t]{ ccccccc }
+        \toprule
+        % \hline
+        \multirow{2}{*}{Methods} & \multicolumn{3}{c}{Female to male} & \multicolumn{3}{c}{Male to female} \\
+        \cline{2-7}
+        & RMSE (Hz) & Mean (Hz) & Std (Hz) & RMSE (Hz) & Mean (Hz) & Std (Hz) \\
+        %\hline
+        %\hline
+        \midrule
+        Target                  & 0 & 133.25 & 34.72 &   0 & 236.11 & 55.00          \\
+        \midrule
             %\hline
             %\hline
-            Source                    & 65.12 & 236.11 & 55.00            \\
+        Source                    & 65.12 & 236.11 & 55.00  & 67.10 & 133.25 & 34.72          \\
             %\hline
-            Linear                       & 17.13 & 127.10 & 28.58               \\
+        Linear                       & 17.13 & 127.10 & 28.58  & 34.13 & 248.04 & 67.04             \\
             %\hline
-            Proposed w/o LF0                       & 17.44 & 124.66 & 27.74            \\
+        Proposed w/o LF0                       & 17.44 & 124.66 & 27.74   & 32.51 & 254.71 & 59.53         \\
             %\hline
-            Proposed                       & \textbf{16.69} & 126.31 & \textbf{29.82}   \\
+        Proposed                       & \textbf{16.69} & 126.31 & \textbf{29.82}   & \textbf{30.37} & 248.66 & \textbf{58.92} \\
             %\hline
-            \bottomrule
-            \end{tabular} 
-        \label{tab:f0f2m}
-    \end{subtable}
-    \bigskip
-    \vspace{1mm}
-    \quad
-    \begin{subtable}[t]{0.9\textwidth}
-        \centering
-        \bicaption{男性说话人转女性说话人}{Male to female}
-        \begin{tabular}[t]{ cccc }
-            \toprule
-            %\hline
-            %\multirow{2}*{Methods} & \multicolumn{3}{|c|}{Male to female}\\
-             %\cline{2-4}
-             Methods & RMSE(Hz) & Mean (Hz) & Std (Hz) \\
-             %\hline
-             %\hline
-            \midrule
-            Target                   & 0 & 236.11 & 55.00            \\
-            \midrule
-            %\hline
-            %\hline
-            Source                        & 67.10 & 133.25 & 34.72            \\
-            %\hline
-            Linear                     & 34.13 & 248.04 & 67.04              \\
-            %\hline
-            Proposed w/o LF0                   & 32.51 & 254.71 & 59.53              \\
-            %\hline
-            Proposed                      & \textbf{30.37} & 248.66 & \textbf{58.92}   \\
-            %\hline
-            \bottomrule
-          \end{tabular}
-        \label{tab:f0m2f}
-    \end{subtable}
+        \bottomrule
+        \end{tabular} 
+    %\end{subtable}
+    % \bigskip
+    % \vspace{1mm}
+    % \quad
+    % \begin{subtable}[t]{0.9\textwidth}
+    %     \centering
+    %     \bicaption{男性说话人转女性说话人}{Male to female}
+    %     \begin{tabular}[t]{ cccc }
+    %         \toprule
+    %         %\hline
+    %         %\multirow{2}*{Methods} & \multicolumn{3}{|c|}{Male to female}\\
+    %          %\cline{2-4}
+    %          Methods & RMSE(Hz) & Mean (Hz) & Std (Hz) \\
+    %          %\hline
+    %          %\hline
+    %         \midrule
+    %         Target                   & 0 & 236.11 & 55.00            \\
+    %         \midrule
+    %         %\hline
+    %         %\hline
+    %         Source                        & 67.10 & 133.25 & 34.72            \\
+    %         %\hline
+    %         Linear                     & 34.13 & 248.04 & 67.04              \\
+    %         %\hline
+    %         Proposed w/o LF0                   & 32.51 & 254.71 & 59.53              \\
+    %         %\hline
+    %         Proposed                      & \textbf{30.37} & 248.66 & \textbf{58.92}   \\
+    %         %\hline
+    %         \bottomrule
+    %       \end{tabular}
+    %     \label{tab:f0m2f}
+    % \end{subtable}
 
-\label{tab:mse}
+    \label{tab:mse}
 \end{table}  
 
 \subsection{主观评测}
