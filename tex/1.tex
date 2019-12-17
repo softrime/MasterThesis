@@ -3,72 +3,7 @@
 应用于人机交互中，使得人类可以直接通过语音来与不同的机器设备交互，即语音人机交互。随着人工智能时代的到来，
 简单的人机交互已经不能满足人们的需要，智能化，个性化已经成为语音人机交互的发展方向。对于机器而言，一个人机
 交互的完整流程通常包括语音识别、
-% \begin{table} 
-%     \centering 
-%     \bicaption{转换基频和目标基频之间误差、均值和方差的对比}{Comparison of MSE, mean and standard deviation between target and converted F0}
-
-%     \begin{subtable}[t]{0.9\textwidth}
-%         \centering
-%         \bicaption{女性说话人转男性说话人}{Female to male}
-%         \begin{tabular}[t]{ cccc }
-%             \toprule
-%             % \hline
-%             %\multirow{1}{*}{Methods} & \multicolumn{3}{|c|}{Female to male} \\
-%              %\cline{2-4}
-%             Methods  & RMSE (Hz) & Mean (Hz) & Std (Hz) \\
-%              %\hline
-%              %\hline
-%             \midrule
-%             Target                  & 0 & 133.25 & 34.72             \\
-%             \midrule
-%             %\hline
-%             %\hline
-%             Source                    & 65.12 & 236.11 & 55.00            \\
-%             %\hline
-%             Linear                       & 17.13 & 127.10 & 28.58               \\
-%             %\hline
-%             Proposed w/o LF0                       & 17.44 & 124.66 & 27.74            \\
-%             %\hline
-%             Proposed                       & \textbf{16.69} & 126.31 & \textbf{29.82}   \\
-%             %\hline
-%             \bottomrule
-%             \end{tabular} 
-%         \label{tab:f0f2m}
-%     \end{subtable}
-%     \bigskip
-%     \vspace{1mm}
-%     \quad
-%     \begin{subtable}[t]{0.9\textwidth}
-%         \centering
-%         \bicaption{男性说话人转女性说话人}{Male to female}
-%         \begin{tabular}[t]{ cccc }
-%             \toprule
-%             %\hline
-%             %\multirow{2}*{Methods} & \multicolumn{3}{|c|}{Male to female}\\
-%              %\cline{2-4}
-%              Methods & RMSE(Hz) & Mean (Hz) & Std (Hz) \\
-%              %\hline
-%              %\hline
-%             \midrule
-%             Target                   & 0 & 236.11 & 55.00            \\
-%             \midrule
-%             %\hline
-%             %\hline
-%             Source                        & 67.10 & 133.25 & 34.72            \\
-%             %\hline
-%             Linear                     & 34.13 & 248.04 & 67.04              \\
-%             %\hline
-%             Proposed w/o LF0                   & 32.51 & 254.71 & 59.53              \\
-%             %\hline
-%             Proposed                      & \textbf{30.37} & 248.66 & \textbf{58.92}   \\
-%             %\hline
-%             \bottomrule
-%           \end{tabular}
-%         \label{tab:f0m2f}
-%     \end{subtable}
-
-% \label{tab:mse}
-% \end{table}  语义理解、对话管理和语音合成四个步骤。其中语音合成作为交互的最后一个环节，
+语义理解、对话管理和语音合成四个步骤。其中语音合成作为交互的最后一个环节，
 主要负责将机器生成的文本转换成语音反馈给用户。其中，所生成语音的个性化程度是影响人机交互体验的重要因素。
 语音转换即可以通过对语音中的说话人特性进行调整和修改，用相对较少的数据实现对语音的个性化生成。
 

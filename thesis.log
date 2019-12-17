@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  16 DEC 2019 10:59
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  17 DEC 2019 14:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3376,9 +3376,10 @@ File: figure/2_dtw.pdf Graphic file (type pdf)
  [16] [17] [18] [19]
 File: figure/2_mlp.pdf Graphic file (type pdf)
 <use figure/2_mlp.pdf>
+ [20]
 File: figure/lstm.png Graphic file (type bmp)
 <figure/lstm.png>
- [20] [21] [22] [23]) (./tex/3.tex [24]
+ [21] [22] [23]) (./tex/3.tex [24]
 第三章
 [25
 
