@@ -6,7 +6,7 @@
 \addvspace {10.0pt}
 \contentsline {table}{\numberline {4--1}{\ignorespaces 转换基频和目标基频之间误差、均值和方差的对比\relax }}{46}{table.caption.25}
 \addvspace {10.0pt}
-\contentsline {table}{\numberline {5--1}{\ignorespaces 转换特征和目标特征的d-vector余弦距离对比\relax }}{60}{table.caption.35}
+\contentsline {table}{\numberline {5--1}{\ignorespaces 转换和目标声学特征的说话人特征余弦距离对比\relax }}{60}{table.caption.35}
 \contentsline {table}{\numberline {5--2}{\ignorespaces 转换模型的相似度偏好测试(\%)\relax }}{63}{table.caption.38}
 \addvspace {10.0pt}
 \addvspace {10.0pt}

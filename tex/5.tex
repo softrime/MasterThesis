@@ -117,7 +117,7 @@ DNN对其中的每一帧都可以得到一个隐层向量，将所有帧的隐�
 表示，当训练时的说话人数目较多时，该表示也可以用来表达没有见过的说话人。
 
 在测试阶段，给定一个特定说话人$s$的语音句集合$X_s = \left\{O_{s_{1}},O_{s_{2}},...,O_{s_{n}}\right\}$。
-其中每个句子是一个观测集合$O_{s_{i}} = \left\{O_1,o_2,...,o_m\right\}$。首先对于每个观测，通过拼接上下帧得到其
+其中每个句子是一个观测集合$O_{s_{i}} = \left\{o_1,o_2,...,o_m\right\}$。首先对于每个观测，通过拼接上下帧得到其
 动态特征，输入给训练好的DNN模型，获得对应的最后一层隐层向量输出，并将其归一化，作为该帧的d-vector。最终说话人$s$的表示则
 是通过将所有的d-vector进行平均得到。当得到该说话人的一个新的语句时，将该句的d-vector与之前得到的说话人的最终表示计算
 余弦距离，通过一个预先设定的阈值来得到最终的识别结果。
@@ -127,9 +127,9 @@ DNN对其中的每一帧都可以得到一个隐层向量，将所有帧的隐�
 \begin{figure}[!htp]
     \centering
     \includegraphics[width=12cm,trim=0 50 250 0,clip]{figure/5_proposedarch.pdf}
-    \bicaption[引入d-vector的语音转换示意图]
-    {引入d-vector的语音转换示意图}
-    {Schematic diagram of the d-vector based Voice Conversion}
+    \bicaption[引入说话人特征的语音转换示意图]
+    {引入说话人特征的语音转换示意图}
+    {Schematic diagram of the speaker feature based Voice Conversion}
     \label{fig:5proposedarch}
 \end{figure}
 
@@ -147,9 +147,9 @@ DNN对其中的每一帧都可以得到一个隐层向量，将所有帧的隐�
 \begin{figure}[!htp]
     \centering
     \includegraphics[width=8cm,trim=0 230 370 0,clip]{figure/5_dvectorcyclegan.pdf}
-    \bicaption[基于d-vector提取器的CycleGAN模型示意图]
-    {基于d-vector提取器的CycleGAN模型示意图}
-    {Schematic diagram of the d-vector extractor based CycleGAN}
+    \bicaption[基于说话人特征提取器的CycleGAN模型示意图]
+    {基于说话人特征提取器的CycleGAN模型示意图}
+    {Schematic diagram of the speaker feature extractor based CycleGAN}
     \label{fig:dvectorcyclegan}
 \end{figure}
 
@@ -188,13 +188,13 @@ $SE$在其中可以看成一个可以前向和反向传播的过滤模型，该�
     \label{fig:5d}
 \end{figure}
 
-说话人特征提取器作为判别器的前置网络，其功能从输入的声学特征序列中提取说话人表示，并尽可能地过滤掉特征中的语义语种信息。
+说话人特征提取器作为判别器的前置网络，其功能是从输入的声学特征序列中提取说话人表示，并尽可能地过滤掉特征中的语义语种信息。
 对于训练一个标准的d-vector提取器来说，通常首先需要较多说话人的语料数据，每个说话人包含几句到几十句不等，目前常用的
 开源数据中包括英文数据集voxceleb\cite{nagrani2017voxceleb}以及中文数据集CN-celeb\cite{fan2019cn}。不同于
 通常的说话人识别任务，为了能够对原始语言的真实原始特征和目标语言的转换原始特征进行说话人信息上的判别，提取出的说话人表示
 需要在中文和英文上尽可能一致。例如，使用英文数据集训练的说话人特征提取器，如果测试时使用
 数据集中一个说话人的中文语音，那么由于说话人特征提取器只见过英文数据，则提取出的说话人表示和这个说话人英文语音的表示很可能有较大差别。
-即使d-vector在训练时见过两种语言，也不能认为这样训练出来的提取器不会考虑语种信息，这就陷入了同CycleGAN一样的问题。
+即使说话人特征在训练时见过两种语言，也不能认为这样训练出来的提取器不会考虑语种信息，这就陷入了同CycleGAN一样的问题。
 解决该问题的方法有两种，一种是从数据角度入手，如果能够收集每个说话人都是双语或多语种说话人，可以收集到他们说不同的语种的语音
 并且这样的说话人数据足够多的话，说话人识别模型则会将同一说话人的不同语种映射到同一个标签上，从而实现对语种的过滤。但这种方法通常
 不可行，因为双语说话人的数据获取难度很大，更不用说很多个说话人了。因此本章提出另一种方法，即从对抗学习的角度来解决这个问题。
@@ -245,8 +245,8 @@ CN-celeb是由清华大学发布的中文说话人识别开源数据集，该数
 \begin{itemize}
     \item N：真实语音
     \item CycleGAN：标准CycleGAN转换的梅尔频谱特征，用GL合成 (Baseline)
-    \item DV-CycleGAN：加入d-vector提取器的CycleGAN转换的梅尔频谱特征，用GL合成 (D-Vector CycleGAN)
-    \item LIDV-CycleGAN：加入语种无关的d-vector提取器的CycleGAN转换的梅尔频谱特征，用GL合成 (Language Independent D-vector CycleGAN)
+    \item DV-CycleGAN：加入说话人特征提取器的CycleGAN转换的梅尔频谱特征，用GL合成 (D-Vector CycleGAN)
+    \item LIDV-CycleGAN：加入语种无关的说话人特征提取器的CycleGAN转换的梅尔频谱特征，用GL合成 (Language Independent D-vector CycleGAN)
 \end{itemize}
 
 由于跨语种的语音转换无论在训练集还是测试集都没有平行语料，不存在真实的标签，因此很难通过频谱距离这样的客观指标来判断
@@ -259,7 +259,7 @@ CN-celeb是由清华大学发布的中文说话人识别开源数据集，该数
 为了验证说话人特征在语音转换的有效性，本节首先对不同配置的提取器在语音转换任务的三个说话人上
 进行可视化分析。本文根据训练说话人数目的不同和加入语种无关训练方式与否一共分为六个模型，每个模型对应图~\ref{fig:dvectordis}中
 的一个子图，子图标题为模型的名称，100 speakers，500 speakers和1000 speakers分别代表训练集包含的说话人
-数目，w/o adv和w/ adv分别代表不使用和使用语种无关的对抗训练方式。对于每一个模型，将三个说话人(lcxinm，gpyinf，ljspeech)的
+数目，这些说话人中一半是中文说话人，另一半是英文说话人，w/o adv和w/ adv分别代表不使用和使用语种无关的对抗训练方式。对于每一个模型，将三个说话人(lcxinm，gpyinf，ljspeech)的
 20句测试集音频提取特征，模型对每一句分别计算一个说话人特征，然后使用t-SNE算法\cite{maaten2008visualizing}对特征向量降到
 二维空间，图中的每一个点代表一句话的说话人特征。
 
@@ -347,7 +347,7 @@ CN-celeb是由清华大学发布的中文说话人识别开源数据集，该数
         跨性别    &    0.6312 & 0.0 & 0.3099 & \textbf{0.2156} & 0.2762  \\
         \bottomrule
         \end{tabular} 
-    \bicaption{转换特征和目标特征的d-vector余弦距离对比}{Comparison of cosine distance between converted and target features}
+    \bicaption{转换和目标声学特征的说话人特征余弦距离对比}{Comparison of cosine distance between converted and target features}
     \label{tab:cosine}
 \end{table}
 
@@ -404,10 +404,10 @@ LIDV-CycleGAN模型的偏好对比，另一组为DV-CycleGAN和LIDV-CycleGAN的�
 戴耳机的条件下进行。
 
 图~\ref{fig:mos2}展示了MOS测试的结果。其中最左列为满分5分的真实音频。可以看到，基线模型的转换音频都没有达到2分，这是因为基线模型
-不仅转换了说话人，也对语义信息进行了转换，直观的感受是尽管输入是英文语音，但转换出来的语音缺听起来像中文，同事转换语音的语义信息丢失非常严重，
+不仅转换了说话人，也对语义信息进行了转换，直观的感受是尽管输入是英文语音，但转换出来的语音却听起来像中文，同时转换语音的语义信息丢失非常严重，
 测试人员普遍无法判别所说语音的内容，从而导致MOS打分的下降。同时，使用本章提出的引入说话人特征的模型分数均
 高于基线模型，由于跨性别任务本身难度较大于同性别任务，因此同性别任务上的提升更为明显。在同性别和跨性别试验中，LIDV-CycleGAN模型都要略好于DV-CycleGAN模型，
-这也在一定程度上验证了说话人无关特征提取器的有效性。除此之外，在图中可以看到转换音质的打分均没有超过
+这也在一定程度上验证了语种无关说话人特征提取器的有效性。除此之外，在图中可以看到转换音质的打分均没有超过
 3分，主要原因是由于本文使用了GL声码器，该声码器的好处是可以完整还原特征对应的音频，但是合成音质相比传统的数字信号声码器和神经网络声码器都要
 较差一些，主要特征是合成语音频谱信息较少，且存在明显的相位问题，这些都会影响主观测评的分数。
 

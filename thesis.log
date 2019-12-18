@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  17 DEC 2019 14:15
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.14)  18 DEC 2019 17:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3395,7 +3395,17 @@ File: figure/3_vae.pdf Graphic file (type pdf)
  [29]
 File: figure/3_cyclegan.pdf Graphic file (type pdf)
 <use figure/3_cyclegan.pdf>
- [30] [31] [32] [33]) (./tex/4.tex [34]
+ [30] [31]
+Underfull \hbox (badness 1540) in paragraph at lines 213--217
+\TU/FandolSong-Regular(0)/m/n/12.045 望 输 出 其 概 率 $[][][][][][][]$ 尽 可 能 接 近 $[]$ 通 过 最 大 化 $[][] []$。|
+ []
+
+
+Underfull \hbox (badness 2529) in paragraph at lines 213--217
+\TU/FandolSong-Regular(0)/m/n/12.045 在 另 一 方 面，|  生 成 器 希 望 提 升 判 别 器 对 其 生 成 的 样 本 的 概 率 值 通 过 最 小 化
+ []
+
+[32] [33]) (./tex/4.tex [34]
 第四章
 File: figure/4_wavenet.png Graphic file (type bmp)
 <figure/4_wavenet.png>
@@ -3600,7 +3610,7 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 Here is how much of TeX's memory you used:
  60539 strings out of 493007
  1211911 string characters out of 6136718
- 1753602 words of memory out of 5000000
+ 1753593 words of memory out of 5000000
  63527 multiletter control sequences out of 15000+600000
  535914 words of font info for 166 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191

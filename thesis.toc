@@ -12,7 +12,7 @@
 \contentsline {subsection}{\numberline {2.2.3}神经网络声码器}{15}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}特征对齐}{16}{section.2.3}
 \contentsline {section}{\numberline {2.4}声学特征转换方法}{17}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}混合高斯模型法}{17}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.1}高斯混合模型法}{17}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}码本映射法}{18}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}频率弯折法}{19}{subsection.2.4.3}
 \contentsline {subsection}{\numberline {2.4.4}神经网络法}{19}{subsection.2.4.4}
